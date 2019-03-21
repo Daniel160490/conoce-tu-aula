@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tasks"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{ lista.titulo }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header> Tareas por hacer </ion-list-header>
+
+    <ion-item>
+      <ion-label floating> Nueva Tarea </ion-label>
+      <ion-input [(ngModel)]="nombreItem"
+                (keyup.enter)="agregarItem()"
+                type="text">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="lista.items.length > 0">
+
+    <ion-list-header> Tareas por hacer </ion-list-header>
+
+    <ion-item-sliding *ngFor="let item of lista.items; let i = index" class="animated fadeInDown">
+      <button ion-item detail-none (click)="actualizarItem(item)">
+          <ion-icon *ngIf="item.completado" name="checkbox-outline" item-start></ion-icon>
+          <ion-icon *ngIf="!item.completado" name="square-outline" item-start></ion-icon>
+          {{ item.desc }}
+      </button>
+
+      <ion-item-options side="right">
+        <!-- Boton de borrar la seleccion -->
+        <button (click)="borrar(i)"
+                ion-button icon-only color="danger">
+          <ion-icon name="close"></ion-icon>
+        </button>
+  
+      </ion-item-options>
+      
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>

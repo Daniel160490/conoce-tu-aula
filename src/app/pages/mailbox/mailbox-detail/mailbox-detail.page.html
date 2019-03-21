@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="perfil"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Contenido del mensaje
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+
+  <ion-item vertical="top" horizontal="center" slot="fixed" style="height: 10%;">
+    <ion-avatar slot="start">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+  </ion-item>
+
+<!-- Contenido de los mensajes -->
+  <ion-card vertical="center" horizontal="center" slot="fixed" style="height: 70%;">
+
+    <ion-card-content>
+
+      <!-- Texto del mensaje y nombre del usuario que lo escribe -->
+      <ion-card>
+        <ion-card-header text-right>
+          <ion-card-subtitle> 
+            <ion-badge color="primary"> Usuario </ion-badge> 
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content text-center>
+          <p>"Contenido del mensaje..."</p>
+        </ion-card-content>
+
+      </ion-card>
+
+    </ion-card-content>
+  
+  </ion-card>
+
+  <ion-item vertical="bottom" horizontal="center" slot="fixed" style="height: 10%;">
+    <ion-label position="floating">Escribe tu mensaje:</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+</ion-content>

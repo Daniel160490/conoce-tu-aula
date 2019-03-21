@@ -1,0 +1,7 @@
+{
+  "name": "conoce-tu-aula",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

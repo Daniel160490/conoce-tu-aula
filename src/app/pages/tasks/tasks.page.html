@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          Mis tareas
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+      
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>¿Qué tenemos aquí?</ion-card-title>
+    </ion-card-header>
+          
+    <ion-card-content>
+        <p>En este apartado encontrarás tus tareas, tanto las realizadas, como las que están aún pendientes por hacer.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item [routerDirection]="'pendientes'" [routerLink]="'/pendientes/'">
+        <ion-label> Tareas pendientes </ion-label>
+    </ion-item>
+    <ion-item routerDirection="'terminadas'" routerLink="/terminadas/">
+        <ion-label> Tareas completadas </ion-label>
+    </ion-item>
+    
+  </ion-list>
+<!-- 
+  <ion-tabs color="primary" selectedIndex="0">
+    <ion-tab-bar>
+      <ion-tab-button (root)="tab1Root">
+        <ion-label> Pendientes </ion-label>
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button (root)="tab2Root">
+        <ion-label> Terminadas </ion-label>
+        <ion-icon name="information-circle"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs> -->
+
+  <!-- Boton para añadir nuevas tareas -->
+  <!-- <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addTask()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+</ion-content>
+
+

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Calendario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="ion-padding-top">
+
+  <ion-row ioin-content>
+
+    <ion-col col-3>
+      <ion-select [(ngModel)]="calendar.mode">
+        <ion-item-option (ionSelect)="onOptionSelected($event)" *ngFor="let mode of calendarModes" (value)="mode.key">
+          {{ mode.value }}
+        </ion-item-option>
+      </ion-select>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addEvent()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <calendar [eventSource]="eventSource" 
+            [markDisabled]="markDisabled" 
+            [calendarMode]="calendar.mode" 
+            [currentDate]="calendar.currentDate"
+            (onCurrentDateChanged)="onCurrentDateChanged($event)" 
+            (onEventSelected)="onEventSelected($event)" 
+            (onTitleChanged)="onViewTitleChanged($event)"
+	          (onTimeSelected)="onTimeSelected($event)" step="30"
+            class="calendar">
+  </calendar>
+
+</ion-content>

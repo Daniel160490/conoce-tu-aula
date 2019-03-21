@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="perfil"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Mensajes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>A</ion-label>
+    </ion-item-divider>
+      
+    <ion-item (click)="openMessage()">
+      <ion-label>Usuario 1</ion-label>
+    </ion-item>
+    <ion-item (click)="openMessage()">
+      <ion-label>Usuario 2</ion-label>
+    </ion-item>
+    <ion-item (click)="openMessage()">
+      <ion-label>Usuario 3</ion-label>
+    </ion-item>
+  </ion-item-group>
+  
+</ion-content>

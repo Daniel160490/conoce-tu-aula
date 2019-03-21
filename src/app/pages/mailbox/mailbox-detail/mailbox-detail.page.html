@@ -11,37 +11,39 @@
   
 <ion-content>
 
-  <ion-item vertical="top" horizontal="center" slot="fixed" style="height: 10%;">
-    <ion-avatar slot="start">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-  </ion-item>
-
-<!-- Contenido de los mensajes -->
-  <ion-card vertical="center" horizontal="center" slot="fixed" style="height: 70%;">
-
-    <ion-card-content>
-
-      <!-- Texto del mensaje y nombre del usuario que lo escribe -->
-      <ion-card>
-        <ion-card-header text-right>
-          <ion-card-subtitle> 
-            <ion-badge color="primary"> Usuario </ion-badge> 
-          </ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content text-center>
-          <p>"Contenido del mensaje..."</p>
-        </ion-card-content>
-
-      </ion-card>
-
-    </ion-card-content>
-  
-  </ion-card>
-
-  <ion-item vertical="bottom" horizontal="center" slot="fixed" style="height: 10%;">
-    <ion-label position="floating">Escribe tu mensaje:</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+  <ion-list>
+    <ion-item>
+      <div class="chat-status" text-center>
+        <span class="chat-date"> Fecha </span>
+        <span class="chat-content-center"> Mensaje de texto... </span>
+      </div>
+      <ng-template #message>
+        <div class="chat-message" text-right> 
+          <div class="right-bubble"> 
+            <span class="msg-name"> Yo </span>
+            <span class="msg-date"> Fecha del mensaje...  </span>
+            <p text-wrap> contenido del mensaje... </p>
+          </div>
+        </div>
+      </ng-template>
+      
+    </ion-item>
+  </ion-list>
 
 </ion-content>
+
+<!--Recuadro para enviar el mensaje de texto -->
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>
+        <ion-input type="text" placeholder="Escribe tu mensaje">
+
+        </ion-input>
+      </ion-col>
+      <ion-col col-2 (click)="enviarMensaje()">
+        <ion-icon name="paper-plane"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

@@ -21,7 +21,7 @@ const routes: Routes = [
     children: [
       { path: 'pendientes', component: PendientesPage },
       //{ path: 'terminadas', loadChildren: './pages/terminadas/terminadas.module#TerminadasPageModule' },
-      { path: 'agregar', loadChildren: './pages/agregar/agregar.module#AgregarPageModule' },
+      //{ path: 'agregar', loadChildren: './pages/agregar/agregar.module#AgregarPageModule' },
       { path: 'listas', loadChildren: './pages/listas/listas.module#ListasPageModule' }
     ]
   }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import * as firebase from 'Firebase';
 
 @Component({
   selector: 'app-mailbox-detail',
@@ -9,10 +10,22 @@ import { NavController } from '@ionic/angular';
 export class MailboxDetailPage implements OnInit {
 
   mailboxDetailPage: 'mailbox-detail';
+  //@ViewChild(MailboxDetailPage) content: MailboxDetailPage;
+
+  data = { type:'', nickname:'', message:'' };
+  chats = [];
+  roomkey:string;
+  nickname:string;
+  offStatus:boolean = false;
 
   constructor(public navCtrl: NavController) { }
 
   ngOnInit() {
   }
+
+  enviarMensaje() {
+
+  }
+  
 
 }

@@ -16,23 +16,10 @@ import { FiltroCompletadoPipe } from 'src/app/pipes/filtro-completado/filtro-com
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
     component: TasksPage,
-    children: [
-      { path: 'pendientes', component: PendientesPage },
-      //{ path: 'terminadas', loadChildren: './pages/terminadas/terminadas.module#TerminadasPageModule' },
-      //{ path: 'agregar', loadChildren: './pages/agregar/agregar.module#AgregarPageModule' },
-      { path: 'listas', loadChildren: './pages/listas/listas.module#ListasPageModule' }
-    ]
   }
 ];
 
-// @NgModule({
-//   declarations: [TasksPage],
-//   imports: [RouterModule.forChild(routes)],
-//   exports: [RouterModule],
-//   schemas: [CUSTOM_ELEMENTS_SCHEMA]
-// })
 
 @NgModule({
   imports: [

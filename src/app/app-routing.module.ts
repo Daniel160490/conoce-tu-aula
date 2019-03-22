@@ -21,10 +21,10 @@ const routes: Routes = [
   { path: 'mailbox', loadChildren: './pages/mailbox/mailbox.module#MailboxPageModule' },
   { path: 'mailbox-detail', loadChildren: './pages/mailbox/mailbox-detail/mailbox-detail.module#MailboxDetailPageModule' },
   { path: 'access', loadChildren: './public/access/access.module#AccessPageModule' },
-  // { path: 'pendientes', loadChildren: './pages/pendientes/pendientes.module#PendientesPageModule' },
-  // { path: 'terminadas', loadChildren: './pages/terminadas/terminadas.module#TerminadasPageModule' },
-  // { path: 'agregar', loadChildren: './pages/agregar/agregar.module#AgregarPageModule' },
-  // { path: 'listas', loadChildren: './pages/listas/listas.module#ListasPageModule' }
+  { path: 'pendientes', loadChildren: './pages/pendientes/pendientes.module#PendientesPageModule' },
+  { path: 'terminadas', loadChildren: './pages/terminadas/terminadas.module#TerminadasPageModule' },
+  { path: 'agregar', loadChildren: './pages/agregar/agregar.module#AgregarPageModule' },
+  { path: 'listas', loadChildren: './pages/listas/listas.module#ListasPageModule' }
 ];
 
 @NgModule({

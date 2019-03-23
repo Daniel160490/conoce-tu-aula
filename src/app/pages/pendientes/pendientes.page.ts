@@ -12,25 +12,24 @@ export class PendientesPage {
   @ViewChild(ListasPage) pendientes: ListasPage;
 
   constructor( public tareaService: TareasService, private navCtrl: NavController, private alertCtrl: AlertController) { }
-  
   async agregarLista(){
-    //Mensaje de alerta.
+    // Mensaje de alerta.
     const alerta = await this.alertCtrl.create({
       // title: 'Nueva lista',
       message: 'Nombre para la lista de tareas',
       inputs: [{
-        name:'titulo',
-        placeholder:'Nombre de la lista'
+        name: 'titulo',
+        placeholder: 'Nombre de la lista'
       }],
       buttons:[{
         text: 'Cancelar'
       },{
         text: 'Agregar',
-        handler: data=>{
-          if(data.titulo.length === 0){
+        handler: data => {
+          if(data.titulo.length === 0) {
             return;
           }
-          this.navCtrl.navigateForward('/agregar');
+          this.navCtrl.navigateForward('agregar');
         }
       }]
     });

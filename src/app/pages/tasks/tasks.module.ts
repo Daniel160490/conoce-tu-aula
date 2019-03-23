@@ -6,19 +6,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { TasksPage } from './tasks.page';
-import { PendientesPage } from '../pendientes/pendientes.page';
-import { TerminadasPage } from '../terminadas/terminadas.page';
 import { TareasService } from 'src/app/services/tareas.service';
-import { ListasPage } from '../listas/listas.page';
-import { AgregarPage } from '../agregar/agregar.page';
 import { FiltroCompletadoPipe } from 'src/app/pipes/filtro-completado/filtro-completado';
+import { PendientesPageModule } from '../pendientes/pendientes.module';
+import { TerminadasPageModule } from '../terminadas/terminadas.module';
+import { AgregarPageModule } from '../agregar/agregar.module';
 
 const routes: Routes = [
   {
     path: '',
     component: TasksPage,
   }
-];
+]
 
 
 @NgModule({
@@ -26,23 +25,19 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    PendientesPageModule,
+    TerminadasPageModule,
+    AgregarPageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     TasksPage,
-    PendientesPage,
-    TerminadasPage,
-    ListasPage,
-    AgregarPage,
     FiltroCompletadoPipe
   ],
-  entryComponents: [
-    PendientesPage,
-    TerminadasPage,
-    AgregarPage
-  ],
+  entryComponents: [ ],
   providers: [
     TareasService
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class TasksPageModule {}

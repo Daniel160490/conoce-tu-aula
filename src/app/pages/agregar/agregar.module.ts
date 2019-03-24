@@ -6,9 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { AgregarPage } from './agregar.page';
-import { TareasService } from 'src/app/services/tareas.service';
 import { ListasPageModule } from '../listas/listas.module';
-import { ListasPage } from '../listas/listas.page';
 
 const routes: Routes = [
   {
@@ -22,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ListasPageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [AgregarPage]

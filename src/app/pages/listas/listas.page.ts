@@ -12,7 +12,9 @@ export class ListasPage  {
 
   @Input() terminado: boolean = false;
 
-  constructor(public tareasService: TareasService, private navCtrl: NavController, private alertCtrl: AlertController) { }
+  constructor(public tareasService: TareasService, private navCtrl: NavController, private alertCtrl: AlertController) { 
+    console.log( " estoy aqui ? " );
+  }
 
   listaSeleccionada( lista: Lista ){
     this.navCtrl.navigateForward('/agregar');

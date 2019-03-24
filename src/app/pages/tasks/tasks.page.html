@@ -23,10 +23,10 @@
   </ion-card>
 
   <ion-list>
-    <ion-item [routerDirection]="'pendientes'" [routerLink]="'/pendientes/'">
+    <ion-item [routerDirection]="'pendientes'" routerLink="pendientes">
         <ion-label> Tareas pendientes </ion-label>
     </ion-item>
-    <ion-item routerDirection="'terminadas'" routerLink="/terminadas/">
+    <ion-item [routerDirection]="'terminadas'" routerLink="terminadas">
         <ion-label> Tareas completadas </ion-label>
     </ion-item>
     

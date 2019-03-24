@@ -12,7 +12,7 @@ export class TasksPage {
 
   tab1Root = PendientesPage;
   tab2Root = TerminadasPage;
-
+  tasksPage: 'tasks';
 
   constructor() { 
     console.log('TasksPage');

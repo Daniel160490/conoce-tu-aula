@@ -10,7 +10,6 @@ import * as firebase from 'Firebase';
 export class MailboxDetailPage implements OnInit {
 
   mailboxDetailPage: 'mailbox-detail';
-  //@ViewChild(MailboxDetailPage) content: MailboxDetailPage;
 
   data = { type:'', nickname:'', message:'' };
   chats = [];

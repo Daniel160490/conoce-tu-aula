@@ -30,7 +30,8 @@
     </ion-fab-button>
   </ion-fab>
 
-  <calendar [eventSource]="eventSource" 
+  <calendar lang="es"
+            [eventSource]="eventSource" 
             [markDisabled]="markDisabled" 
             [calendarMode]="calendar.mode" 
             [currentDate]="calendar.currentDate"
@@ -40,5 +41,4 @@
 	          (onTimeSelected)="onTimeSelected($event)" step="30"
             class="calendar">
   </calendar>
-
 </ion-content>

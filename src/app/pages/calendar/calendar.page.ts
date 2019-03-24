@@ -1,16 +1,21 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController, ModalController, AlertController, ActionSheetController } from '@ionic/angular';
-import * as moment from 'moment';
-import { EventModalPage } from '../event-modal/event-modal.page';
-import { TareasService } from 'src/app/services/tareas.service';
+import { Component } from "@angular/core";
+import {
+  NavController,
+  ModalController,
+  AlertController,
+  ActionSheetController
+} from "@ionic/angular";
+import * as moment from "moment";
+import { EventModalPage } from "../event-modal/event-modal.page";
+import * as _ from "lodash";
 
 @Component({
-  selector: 'app-calendar',
-  templateUrl: './calendar.page.html',
-  styleUrls: ['./calendar.page.scss'],
+  selector: "app-calendar",
+  templateUrl: "./calendar.page.html",
+  styleUrls: ["./calendar.page.scss"]
 })
 export class CalendarPage {
-
+  
   eventSource = [];
   viewTitle: string;
   selectedDay = new Date();
@@ -30,10 +35,10 @@ export class CalendarPage {
 
   constructor(
     public navCtrl: NavController,
-    private actionSheetCtrl: ActionSheetController, 
     private modalCtrl: ModalController, 
     private alertCtrl: AlertController) { 
   
+    console.log('CalendarPage');
   }
 
   // Metodo para cambiar el modo del calendario, si es por mes, dia o semana
@@ -49,23 +54,23 @@ export class CalendarPage {
       componentProps: {selectedDay: this.selectedDay}
     });
     
-    modal.onDidDismiss().then(data => {
-      if(data){
+    modal.present();
+    modal.onDidDismiss().then( data => {
+      if (data) {
         let eventData = data;
-        let events = this.eventSource;
-       
+ 
         eventData.data.startTime = new Date(data.data.startTime);
         eventData.data.endTime = new Date(data.data.endTime);
-
+ 
+        let events = this.eventSource;
         events.push(eventData);
         this.eventSource = [];
-        setTimeout(()=>{
+        setTimeout(() => {
           this.eventSource = events;
         });
       }
     });
 
-    modal.present();
     
   }
 
@@ -79,7 +84,6 @@ export class CalendarPage {
     let end = moment(event.endTime).format('LLLL');
     
     let alert = await  this.alertCtrl.create({
-      // title: '' + event.title,
       message: 'Desde: ' + start + '<br>Hasta: ' + end,
       buttons: ['OK']
     })
@@ -110,11 +114,7 @@ export class CalendarPage {
     console.log($event)
     this.calendar.mode = $event
   }
- 
-  
 }
-
-
 
 // guia para calendario
 // https://stackblitz.com/edit/ionic-calendar-scheduler?file=app%2Fapp.component.ts

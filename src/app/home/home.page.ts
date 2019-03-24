@@ -13,7 +13,8 @@ export class HomePage {
   
   
   constructor(public navCtrl: NavController){
-
+    console.log('HomePage');
+    
   }
 
   // Acceso a la pantalla de login

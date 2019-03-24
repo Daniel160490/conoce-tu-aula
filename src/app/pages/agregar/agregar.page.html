@@ -24,10 +24,10 @@
     </ion-item>
   </ion-list>
 
-  <ion-list *ngIf="lista.items.length > 0">
+  <ion-list *ngIf = "lista.items.length > 0">
 
     <ion-list-header> Tareas por hacer </ion-list-header>
-
+    <!-- Iconos que aparecen al deslizar el elemento -->
     <ion-item-sliding *ngFor="let item of lista.items; let i = index" class="animated fadeInDown">
       <button ion-item detail-none (click)="actualizarItem(item)">
           <ion-icon *ngIf="item.completado" name="checkbox-outline" item-start></ion-icon>

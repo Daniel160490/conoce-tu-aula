@@ -11,6 +11,9 @@ import { FiltroCompletadoPipe } from 'src/app/pipes/filtro-completado/filtro-com
 import { PendientesPageModule } from '../pendientes/pendientes.module';
 import { TerminadasPageModule } from '../terminadas/terminadas.module';
 import { AgregarPageModule } from '../agregar/agregar.module';
+import { PendientesPage } from '../pendientes/pendientes.page';
+import { TerminadasPage } from '../terminadas/terminadas.page';
+import { AgregarPage } from '../agregar/agregar.page';
 
 const routes: Routes = [
   {
@@ -34,7 +37,11 @@ const routes: Routes = [
     TasksPage,
     FiltroCompletadoPipe
   ],
-  entryComponents: [ ],
+  entryComponents: [
+    PendientesPage,
+    TerminadasPage,
+    AgregarPage
+  ],
   providers: [
     TareasService
   ],

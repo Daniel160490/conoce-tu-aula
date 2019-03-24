@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { TareasService } from 'src/app/services/tareas.service';
 import { NavController, AlertController } from '@ionic/angular';
-import { ListasPage } from '../listas/listas.page';
 
 @Component({
   selector: 'app-pendientes',
@@ -9,9 +7,11 @@ import { ListasPage } from '../listas/listas.page';
 })
 export class PendientesPage {
 
-  @ViewChild(ListasPage) pendientes: ListasPage;
 
-  constructor( public tareaService: TareasService, private navCtrl: NavController, private alertCtrl: AlertController) { }
+  constructor(private navCtrl: NavController, private alertCtrl: AlertController) { 
+    console.log('PendientesPage');
+    
+  }
   async agregarLista(){
     // Mensaje de alerta.
     const alerta = await this.alertCtrl.create({
@@ -29,7 +29,7 @@ export class PendientesPage {
           if(data.titulo.length === 0) {
             return;
           }
-          this.navCtrl.navigateForward('agregar');
+          this.navCtrl.navigateForward('/agregar');
         }
       }]
     });

@@ -14,7 +14,7 @@ export class AgregarPage  {
   nombreItem: string = '';
   agregarPage: 'agregar';
 
-  constructor(public tareaService: TareasService,private navParams: NavParams, public navCtrl: NavController ) {
+  constructor(public tareaService: TareasService,private navParams: NavParams ) {
    
     const titulo = this.navParams.get('titulo');
     if( this.navParams.get('lista')){
@@ -23,6 +23,7 @@ export class AgregarPage  {
       this.lista = new Lista( titulo );
       this.tareaService.agregarTarea(this.lista);
     }
+    console.log(titulo);
   }
 
   agregarItem(){

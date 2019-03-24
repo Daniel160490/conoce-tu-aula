@@ -24,23 +24,23 @@ export class ListasPage  {
     this.tareasService.borrarTarea(lista);
   }
 
-  editarLista(lista: Lista, slidingItem: IonItemSliding){
+  async editarLista(lista: Lista, slidingItem: IonItemSliding){
 
     slidingItem.close();
 
-    const alerta = this.alertCtrl.create({
+    const alerta = await this.alertCtrl.create({
       message: 'Editar el nombre de la lista',
-      inputs: [{
+      inputs: [ {
         name:'titulo',
         placeholder:'Nombre de la lista',
         value: lista.titulo
       }],
-      buttons:[{
+      buttons:[ {
         text: 'Cancelar'
       },{
         text: 'Guardar',
-        handler: data=>{
-          if(data.titulo.length === 0){
+        handler: data => { 
+          if( data.titulo.length === 0 ) {
             return;
           }
           lista.titulo = data.titulo;
@@ -49,6 +49,6 @@ export class ListasPage  {
       }]
     });
 
-    // alerta.present();
+    alerta.present();
   }
 }

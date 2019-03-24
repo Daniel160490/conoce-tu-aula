@@ -7,10 +7,10 @@ import { ListasPage } from '../listas/listas.page';
   styleUrls: ['./terminadas.page.scss'],
 })
 export class TerminadasPage {
-
-  @ViewChild(ListasPage) pendientes: ListasPage;
   
-  constructor() { }
+  constructor() {
+    console.log('TerminadasPage');
+  }
 
 
 

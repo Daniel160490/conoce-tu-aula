@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { TareasService } from 'src/app/services/tareas.service';
-
-
 import { PendientesPage } from '../pendientes/pendientes.page';
 import { TerminadasPage } from '../terminadas/terminadas.page';
 
@@ -18,7 +14,10 @@ export class TasksPage {
   tab2Root = TerminadasPage;
 
 
-  constructor() { }
+  constructor() { 
+    console.log('TasksPage');
+    
+  }
   // private tareasService: TareasService, public navCtrl: NavController
   // addTask(){
   //   this.navCtrl.navigateForward('/agregar');

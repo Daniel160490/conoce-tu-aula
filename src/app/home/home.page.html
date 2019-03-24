@@ -10,6 +10,7 @@
 </ion-header>
 
 <ion-content>
+
   <ion-fab vertical="top" horizontal="end" edge slot="fixed">
     <ion-fab-button (click)="accessLogin()">
       <ion-icon name="person"></ion-icon>
@@ -23,27 +24,33 @@
       <ion-card-title> {{ titulo }} </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-        <p> <strong> ¿Quieres estar al día con las tareas de tu hij@ en el colegio? </strong> </p>
-        <p> 
-          Esta es tu aplicación donde poder ver diariamente las tareas (si las tuviera) de tu hijo.
-          Observa el calendario, o el listado de tareas. 
-        </p>
-        <p> <strong> ¿Necesitas una reunión con el / la profesor/a? </strong> </p>
-        <p> Solo tienes que ir al perfil del profesor y solicitarla, así de fácil. </p>
-     
+      <p>
+        <strong>
+          ¿Quieres estar al día con las tareas de tu hij@ en el colegio?
+        </strong>
+      </p>
+      <p>
+        Esta es tu aplicación donde poder ver diariamente las tareas (si las
+        tuviera) de tu hijo. Observa el calendario, o el listado de tareas.
+      </p>
+      <p> <strong> ¿Necesitas una reunión con el/la profesor/a? </strong> </p>
+      <p>
+        Solo tienes que ir al perfil del profesor y solicitarla, así de fácil.
+      </p>
     </ion-card-content>
   </ion-card>
+
   <ion-list lines="none">
     <ion-list-header>
       <ion-label> ¿Qué podemos encontrar aquí? </ion-label>
     </ion-list-header>
     <ion-item (click)="accessCalendar()">
       <ion-icon slot="start" color="medium" name="calendar"></ion-icon>
-      <ion-label>Mi calendario</ion-label>
+      <ion-label> Mi calendario </ion-label>
     </ion-item>
     <ion-item (click)="accessTasks()">
       <ion-icon slot="start" color="medium" name="briefcase"></ion-icon>
-      <ion-label>Mis tareas diarias</ion-label>
+      <ion-label> Mis tareas diarias </ion-label>
     </ion-item>
     <ion-item (click)="accessAbout()">
       <ion-icon
@@ -51,7 +58,8 @@
         color="medium"
         name="information-circle-outline"
       ></ion-icon>
-      <ion-label>Información sobre la aplicación</ion-label>
+      <ion-label> Información sobre la aplicación </ion-label>
     </ion-item>
   </ion-list>
+
 </ion-content>

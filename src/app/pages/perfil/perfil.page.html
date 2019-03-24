@@ -10,23 +10,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-avatar slot="start">
-      <img
-        src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
-      />
-    </ion-avatar>
-    <ion-label>Nombre: </ion-label>
-  </ion-item>
-
   <ion-card>
     <ion-card-header>
       <ion-card-title>Información</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p>Cursos a los que imparte clase:</p>
-      <p>Asignaturas que imparte:</p>
+      <p> Tu profesor: </p>
+      <p> Cursos a los que imparte clase: </p>
+      <p> Asignaturas que imparte: </p>
     </ion-card-content>
   </ion-card>
 
@@ -36,8 +28,11 @@
       <ion-card-title>¿Necesitas una reunión?</ion-card-title>
       <ion-card-subtitle>
         <p>Selecciona una fecha para solicitar una reunión con el profesor.</p>
-        <p> Esto mandará un correo al profesor y él confirmará la reunión, </p>
-        <p> cuando esto ocurra, aparecerá un recuadro más abajo confirmando la reunión. </p>
+        <p>Esto mandará un correo al profesor y él confirmará la reunión,</p>
+        <p>
+          cuando esto ocurra, aparecerá un recuadro más abajo confirmando la
+          reunión.
+        </p>
       </ion-card-subtitle>
     </ion-card-header>
 
@@ -60,10 +55,16 @@
           <p text-center>Fecha seleccionada: {{ fecha.substr(0, 10) }}</p>
         </ion-item>
         <ion-item>
-            <ion-label> Motivo de la reunión </ion-label>
-            <ion-select placeholder="Selecciona un motivo">
-                <ion-select-option *ngFor="let moti of motivoReunion"> {{moti.title}} </ion-select-option>
-            </ion-select>
+          <ion-label> Motivo de la reunión </ion-label>
+          <ion-select
+            [interfaceOptions]="customPopoverOptions"
+            interface="action-sheet"
+            placeholder="Selecciona un motivo"
+          >
+            <ion-select-option *ngFor="let moti of motivoReunion">
+              {{ moti.title }}
+            </ion-select-option>
+          </ion-select>
         </ion-item>
       </ion-list>
     </ion-card-content>

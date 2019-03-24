@@ -13,17 +13,24 @@ export class PerfilPage implements OnInit {
   minFecha: string = (new Date().getFullYear()-5).toString();
   maxFecha: string = (new Date().getFullYear()+5).toString();
   
+  customPopoverOptions: any = {
+    header: 'Motivo de la reunión',
+    translucent: true
+  }
   // Motivos por los que se puede pedir una reunión
-  motivoReunion = [
+  motivoReunion: any = [
     {
+      id: 1,
       title: 'Progreso del alumno',
       value: 'progress'
     },
     {
+      id: 2,
       title: 'Reunión informativa',
       value: 'info'
     },
     {
+      id: 3,
       title: 'Otros',
       value: 'others'
     }
@@ -31,7 +38,6 @@ export class PerfilPage implements OnInit {
 
   constructor(public navCtrl: NavController) { 
     console.log('PerfilPage');
-    
   }
 
   ngOnInit() {

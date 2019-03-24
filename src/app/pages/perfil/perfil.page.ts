@@ -12,6 +12,22 @@ export class PerfilPage implements OnInit {
   fecha: string = this.fechaCorta;
   minFecha: string = (new Date().getFullYear()-5).toString();
   maxFecha: string = (new Date().getFullYear()+5).toString();
+  
+  // Motivos por los que se puede pedir una reunión
+  motivoReunion = [
+    {
+      title: 'Progreso del alumno',
+      value: 'progress'
+    },
+    {
+      title: 'Reunión informativa',
+      value: 'info'
+    },
+    {
+      title: 'Otros',
+      value: 'others'
+    }
+  ]
 
   constructor(public navCtrl: NavController) { 
     console.log('PerfilPage');

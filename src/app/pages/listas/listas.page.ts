@@ -13,17 +13,20 @@ export class ListasPage  {
   @Input() terminado: boolean = false;
 
   constructor(public tareasService: TareasService, private navCtrl: NavController, private alertCtrl: AlertController) { 
-    console.log( " estoy aqui ? " );
+    console.log( 'ListasPage' );
   }
 
+  // Metodo para seleccionar una lista
   listaSeleccionada( lista: Lista ){
     this.navCtrl.navigateForward('/agregar');
   }
 
+  // Metodo para eliminar una lista de tareas 
   borrarLista( lista: Lista ){
     this.tareasService.borrarTarea(lista);
   }
 
+  // Metodo para editar una lista de tareas
   async editarLista(lista: Lista, slidingItem: IonItemSliding){
 
     slidingItem.close();

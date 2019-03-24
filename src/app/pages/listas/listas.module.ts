@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ListasPage } from './listas.page';
+import { FiltroCompletadoPipe } from 'src/app/pipes/filtro-completado/filtro-completado';
 
 const routes: Routes = [
   {
@@ -21,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListasPage]
+  declarations: [ListasPage, FiltroCompletadoPipe]
 })
 export class ListasPageModule {}

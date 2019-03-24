@@ -7,14 +7,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <h1>Contenido de tareas pendientes </h1>
+<ion-content>
   
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="text-align: center;"> Listado de las tareas pendientes </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p> <ion-icon name="information-circle-outline"></ion-icon> Arrastra la tarea hacia la derecha para eliminarla.</p>
+      <p> O arrastra la tarea hacia la izquierda para editar su nombre. </p>
+    </ion-card-content>
+  </ion-card>
+  
+  <!-- Componente de las listas de tareas -->
   <app-listas></app-listas>
 
-   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-      <ion-fab-button (click)="agregarLista()">
-        <ion-icon name="add"></ion-icon>
+  <!-- Boton para añadir nuevas tareas -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="agregarLista()">
+      <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 

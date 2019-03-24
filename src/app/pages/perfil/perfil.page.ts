@@ -13,7 +13,10 @@ export class PerfilPage implements OnInit {
   minFecha: string = (new Date().getFullYear()-5).toString();
   maxFecha: string = (new Date().getFullYear()+5).toString();
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController) { 
+    console.log('PerfilPage');
+    
+  }
 
   ngOnInit() {
   }

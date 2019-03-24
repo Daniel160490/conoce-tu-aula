@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
 
 @Component({
@@ -10,12 +10,12 @@ export class PendientesPage {
 
   constructor(private navCtrl: NavController, private alertCtrl: AlertController) { 
     console.log('PendientesPage');
-    
   }
+
   async agregarLista(){
     // Mensaje de alerta.
     const alerta = await this.alertCtrl.create({
-      // title: 'Nueva lista',
+
       message: 'Nombre para la lista de tareas',
       inputs: [{
         name: 'titulo',

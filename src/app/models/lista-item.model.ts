@@ -1,5 +1,3 @@
-
-
 export class ListaItem{
    desc: string;
    completado: boolean;

@@ -1,6 +1,6 @@
 <ion-list>
 
-  <ion-item-sliding #slidingItem *ngFor="let lista of tareasService.listas ">
+  <ion-item-sliding #slidingItem *ngFor="let lista of tareasService.listas | filtroCompletado:terminado ">
   
     <ion-item-options side="left">
       <button (click)="editarLista(lista, slidingItem)" ion-button icon-only color="info">
@@ -24,4 +24,13 @@
   </ion-item-sliding>
   
 </ion-list>
+
+<!-- Card que sale con mensaje de elemento vacio en el caso de que no tenga nada el array -->
+<ion-card *ngIf="tareasService.listas.length === 0">
+  <ion-card-content style="text-align: center;">
+    <ion-icon name="sad"></ion-icon>
+    <p> Esta lista está vacía.</p>
+    <p> Puedes añadir una tarea nueva pulsando (+) </p>
+  </ion-card-content>
+</ion-card>
   

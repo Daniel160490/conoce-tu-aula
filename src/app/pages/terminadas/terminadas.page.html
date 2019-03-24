@@ -1,13 +1,29 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="tasks"></ion-back-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tasks"></ion-back-button>
+    </ion-buttons>
     <ion-title> Tareas completadas </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <app-listas></app-listas>
-  <h1>Tareas terminadas</h1>
+<ion-content>
+ 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="text-align: center;">
+        Listado de las tareas completadas
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>
+        <ion-icon name="information-circle-outline"></ion-icon> Arrastra la
+        tarea hacia la derecha para eliminarla.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <app-listas [terminado] = "true"></app-listas>
+  
 </ion-content>

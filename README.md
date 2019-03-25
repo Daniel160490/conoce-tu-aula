@@ -10,3 +10,6 @@ Componentes de la apliación:
   - tareas pendientes
 - mailbox
 - sobre la aplicación
+
+##### Descripción de los componentes
+**Perfil del profesor** : 

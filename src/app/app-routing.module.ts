@@ -24,7 +24,8 @@ const routes: Routes = [
   { path: 'pendientes', loadChildren: './pages/pendientes/pendientes.module#PendientesPageModule' },
   { path: 'terminadas', loadChildren: './pages/terminadas/terminadas.module#TerminadasPageModule' },
   { path: 'agregar', loadChildren: './pages/agregar/agregar.module#AgregarPageModule' },
-  { path: 'listas', loadChildren: './pages/listas/listas.module#ListasPageModule' }
+  { path: 'listas', loadChildren: './pages/listas/listas.module#ListasPageModule' },  { path: 'help', loadChildren: './pages/help/help.module#HelpPageModule' }
+
 ];
 
 @NgModule({

@@ -55,21 +55,21 @@ export class CalendarPage {
     });
     
     modal.present();
-    modal.onDidDismiss().then( data => {
-      if (data) {
-        let eventData = data;
+    // modal.onDidDismiss().then( data => {
+    //   if (data) {
+    //     let eventData = data;
  
-        eventData.data.startTime = new Date(data.data.startTime);
-        eventData.data.endTime = new Date(data.data.endTime);
+    //     eventData.data.startTime = new Date(data.data.startTime);
+    //     eventData.data.endTime = new Date(data.data.endTime);
  
-        let events = this.eventSource;
-        events.push(eventData);
-        this.eventSource = [];
-        setTimeout(() => {
-          this.eventSource = events;
-        });
-      }
-    });
+    //     let events = this.eventSource;
+    //     events.push(eventData);
+    //     this.eventSource = [];
+    //     setTimeout(() => {
+    //       this.eventSource = events;
+    //     });
+    //   }
+    // });
 
     
   }

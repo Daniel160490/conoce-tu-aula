@@ -17,3 +17,10 @@
 - **Tareas:** Aquí se encuentra grueso de la aplicación, donde se podrá ver las tareas que el alumno tiene aún pendientes, o las que tiene completadas, desde aquí el profesor será quien pueda añadirlas o eliminarlas, dejando al usuario que solo pueda visualizar esos cambios que realiza el profesor.
 - **Mailbox:** Apartado de mensajería para contactar con el profesor.
 - **Sobre la aplicación:** Apartado sencillo donde solo se mostrará información básica sobre la aplicación y un poco de ayuda sobre el uso de la misma.
+
+
+
+
+#### Documentación de iconos:
+
+https://ionicframework.com/docs/v3/ionicons/

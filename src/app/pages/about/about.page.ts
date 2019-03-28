@@ -3,7 +3,8 @@ import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-about',
-  templateUrl: './about.page.html'
+  templateUrl: './about.page.html',
+  styleUrls: ['about.page.scss']
 })
 export class AboutPage {
 
@@ -12,6 +13,10 @@ export class AboutPage {
   // Acceso al componente de ayuda al usuario
   openHelp(){
     this.navCtrl.navigateForward('help');
+  }
+
+  closeApp(){
+    this.navCtrl.navigateForward('access');
   }
 
 }

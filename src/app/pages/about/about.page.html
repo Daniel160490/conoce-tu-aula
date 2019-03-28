@@ -4,43 +4,54 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Sobre nosotros
+      Sobre Conoce tu aula
     </ion-title>
   </ion-toolbar>
 </ion-header>
-  
+
 <ion-content>
 
   <!-- Breve informacion sobre la aplicacion -->
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Información</ion-card-title>
+    <ion-card-header text-center>
+      <ion-card-title> Información </ion-card-title>
     </ion-card-header>
-      
+
     <ion-card-content>
-      <p>Conoce tu aula - aplicación creada para la gestión de tus tareas diarias</p>
+      <ion-img
+        style="height: 25%; width: 25%; display: block; margin-left: auto; margin-right: auto; padding-bottom: 5%;"
+        src="/assets/icon/favicon.png"></ion-img>
+      <p> Conoce tu aula - aplicación creada para la gestión de tus tareas diarias </p>
       <p> </p>
-      <h6>Conoce tu aula © 2019</h6>
+      <h6 text-center>© Conoce tu aula 2019</h6>
     </ion-card-content>
   </ion-card>
 
   <!-- Acceso a la ayuda de la apliación -->
-  <ion-card style = " background-image: url('/assets/fondo.png'); background-size: 100%; color: honeydew;">
-    <ion-card-header>
-      <ion-card-title style = "color:honeydew;"> Ayuda </ion-card-title>
+  <ion-card style=" background-image: url('/assets/fondo.png'); background-size: 100%; color: honeydew;">
+    <ion-card-header text-center>
+      <ion-card-title style="color:honeydew;"> Ayuda </ion-card-title>
     </ion-card-header>
-      
+
     <ion-card-content>
       <p> Si necesitas ayuda, este es tu sitio </p>
-      <p> </p>
-  
+      <p> Pulsa el botón de la derecha para acceder </p>
+
       <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button (click)="openHelp()">
           <ion-icon name="help"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-      
+
     </ion-card-content>
   </ion-card>
+
+  <ion-footer class="foo">
+    <ion-toolbar text-right>
+      <div padding>
+        <ion-button (click)="closeApp()" size="large" type="submit" expand="block" shape="round"> Cerrar sesión </ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
 
 </ion-content>

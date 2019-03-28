@@ -19,7 +19,7 @@ export class HomePage {
 
   // Acceso a la pantalla de login
   accessLogin(){
-    this.navCtrl.navigateForward('login');
+    this.navCtrl.navigateForward('access');
   }
 
   accessCalendar(){

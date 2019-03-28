@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,15 +12,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class LoginPage implements OnInit {
 
   loginPage = 'login';
-  loginForm: FormGroup;
-	loginError: string;
  
   
   
 	constructor(
     private navCtrl: NavController,
-    fb: FormBuilder,
-    public _cs: AuthenticationService
+    private  authService:  AuthenticationService, private  router:  Router
 	) {
 		
   }
@@ -31,16 +28,18 @@ export class LoginPage implements OnInit {
   }
 
   login(){
-    this.navCtrl.navigateForward('access');
+    this.navCtrl.navigateForward('home');
   }
 
   // Metodo para llamar a la autentificacion
-  ingresar( proveedor: string){
-    this._cs.login(proveedor);
-  }
+  // ingresar( proveedor: string){
+  //   this.authService.login(proveedor);
+  // }
 }
 
 
 
 // manual de login?
 // https://guiadev.com/manual-de-ionic-framework-parte-04/
+
+// https://ionicthemes.com/tutorials/about/ionic-google-login

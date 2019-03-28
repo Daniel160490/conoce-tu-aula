@@ -9,6 +9,8 @@ import { NavController } from '@ionic/angular';
 export class AccessPage implements OnInit {
 
   accessPage: 'access';
+  titleApp: 'Conoce tu aula';
+
 
   constructor(public navCtrl: NavController) { }
 
@@ -16,7 +18,11 @@ export class AccessPage implements OnInit {
   }
 
    login(){
-    this.navCtrl.navigateForward('home');
+    this.navCtrl.navigateForward('login');
+  }
+
+  signup(){
+    this.navCtrl.navigateForward('register');
   }
 
 }

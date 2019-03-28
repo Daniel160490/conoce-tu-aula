@@ -1,8 +1,10 @@
 
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { Platform } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
+const TOKEN_KEY = 'auth-token';
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +12,35 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class AuthenticationService {
 
   authenticationState = new BehaviorSubject(false);
-  public usuario: any = {};
  
-  constructor( private afs: AngularFirestore ) { 
-    
-    
+  constructor(private storage: Storage, private plt: Platform) { 
+    this.plt.ready().then(() => {
+      this.checkToken();
+    });
   }
  
-  login( proveedor: string ) {
-    // this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  checkToken() {
+    this.storage.get(TOKEN_KEY).then(res => {
+      if (res) {
+        this.authenticationState.next(true);
+      }
+    })
+  }
+ 
+  login() {
+    return this.storage.set(TOKEN_KEY, 'Bearer 1234567').then(() => {
+      this.authenticationState.next(true);
+    });
   }
  
   logout() {
-    // Limpia el objeto para salir
-    // this.usuario = {};
-    // this.afAuth.auth.signOut();
+    return this.storage.remove(TOKEN_KEY).then(() => {
+      this.authenticationState.next(false);
+    });
+  }
+ 
+  isAuthenticated() {
+    return this.authenticationState.value;
   }
  
   

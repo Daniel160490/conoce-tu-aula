@@ -1,27 +1,56 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
-    <!-- <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons> -->
-    <ion-title>
-      Acceso a la aplicación
+    <ion-title text-center>
+      {{ titleApp }}
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
+<ion-content>
+  <ion-card style=" margin-top: 30%;">
 
-  <ion-item>
-    <ion-label position="floating"> Usuario </ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+    <ion-card-header>
+      <ion-card-title> {{ titleApp }} </ion-card-title>
+    </ion-card-header>
 
-  <ion-item>
-    <ion-label position="floating"> Contraseña </ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+   
+    <ion-card-content>
+      <img src="assets/icon/favicon.png" class="imgRedonda" />
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h1 text-center> ¡Bienvenid@! </h1>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-  <ion-button (click)="login()" expand="block">Acceder</ion-button>
-  <ion-button expand="block" color="secondary" routerLink="/register" routerDirection="forward">Registrarse</ion-button>
+      <ion-grid>
+        <ion-row>
+          <ion-col center text-center>
+            <ion-button ion-button full color="primary" (click)="login()" shape="round"> Login </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col center text-center>
+            <ion-button ion-button full color="success" (click)="signup()" shape="round"> Registrar </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h6 text-center> Ésta es tu aula digital </h6>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-footer class="foo">
+    <ion-toolbar text-right>
+      <p> © Conoce tu aula 2019 </p>
+    </ion-toolbar>
+  </ion-footer>
 
 </ion-content>

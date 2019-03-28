@@ -1,0 +1,39 @@
+#welcome{
+    
+    h1{
+        font-size: 52px;
+        margin-top:50px
+    }
+    .marginTop{
+        margin-top:150px;
+    }
+    .logo{
+        height: 100px;
+    }
+    
+}
+
+ion-item{
+    --background: #3880ff;
+    --color: #fff;
+}
+
+ion-button{
+    --background: #062f77;
+}
+
+.foo{
+    margin-top: 60%;
+    height: 50px !important;
+}
+
+.imgRedonda {
+    height: 25%; width: 25%;
+    border-radius: 160px;
+    border:3px solid #666;
+    display: block; 
+    margin-top: 10%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-bottom: 5%;
+}

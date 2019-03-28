@@ -21,6 +21,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PendientesPage]
+  declarations: [PendientesPage],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class PendientesPageModule {}

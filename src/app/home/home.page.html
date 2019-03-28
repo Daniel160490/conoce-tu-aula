@@ -44,22 +44,29 @@
     <ion-list-header>
       <ion-label> ¿Qué podemos encontrar aquí? </ion-label>
     </ion-list-header>
-    <ion-item (click)="accessCalendar()">
-      <ion-icon slot="start" color="medium" name="calendar"></ion-icon>
-      <ion-label> Mi calendario </ion-label>
+
+
+    <ion-item>
+      <ion-chip (click)="accessCalendar()">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label> Mi calendario </ion-label>
+      </ion-chip>
     </ion-item>
-    <ion-item (click)="accessTasks()">
-      <ion-icon slot="start" color="medium" name="briefcase"></ion-icon>
-      <ion-label> Mis tareas diarias </ion-label>
+
+    <ion-item>
+      <ion-chip (click)="accessTasks()">
+        <ion-icon name="briefcase"></ion-icon>
+        <ion-label> Mis tareas diarias </ion-label>
+      </ion-chip>
     </ion-item>
-    <ion-item (click)="accessAbout()">
-      <ion-icon
-        slot="start"
-        color="medium"
-        name="information-circle-outline"
-      ></ion-icon>
-      <ion-label> Información sobre la aplicación </ion-label>
+
+    <ion-item>
+      <ion-chip (click)="accessAbout()">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <ion-label> Información sobre la aplicación </ion-label>
+      </ion-chip>
     </ion-item>
+    
   </ion-list>
 
 </ion-content>

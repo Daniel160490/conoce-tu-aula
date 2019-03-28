@@ -9,6 +9,9 @@ export class HelpPage  {
 
   helpPage: 'help'; 
   
-  constructor() { }
+  constructor() { 
+    console.log('HelpPage');
+    
+  }
 
 }

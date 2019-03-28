@@ -21,19 +21,29 @@ ion-item{
 ion-button{
     --background: #062f77;
 }
+ion-card{
+    border-radius: 5%;
+}
 
 .foo{
-    margin-top: 60%;
+    // margin-top: 60%;
     height: 50px !important;
 }
 
 .imgRedonda {
+    z-index: +1;
     height: 25%; width: 25%;
     border-radius: 100%;
     border:3px solid #666;
-    display: block; 
-    margin-top: 10%; 
+    // display: block; 
+    // margin-top: 10%; 
     margin-left: auto; 
     margin-right: auto; 
     // padding-bottom: 5%;
+}
+.background {
+    max-width: auto;
+    height: auto;
+    width: auto;
+    filter: blur(40px);
 }

@@ -24,8 +24,10 @@ const routes: Routes = [
   { path: 'terminadas', loadChildren: './pages/terminadas/terminadas.module#TerminadasPageModule' },
   { path: 'agregar', loadChildren: './pages/agregar/agregar.module#AgregarPageModule' },
   { path: 'listas', loadChildren: './pages/listas/listas.module#ListasPageModule' },
-  { path: 'help', loadChildren: './pages/help/help.module#HelpPageModule' }
-
+  { path: 'help', loadChildren: './pages/help/help.module#HelpPageModule' },
+  { path: 'help1', loadChildren: './pages/help/help1/help1.module#HelpPage1Module' },
+  { path: 'help2', loadChildren: './pages/help/help2/help2.module#HelpPage2Module' },
+  { path: 'help3', loadChildren: './pages/help/help3/help3.module#HelpPage3Module' },
 ];
 
 @NgModule({

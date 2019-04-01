@@ -8,6 +8,9 @@ import { IonicModule } from '@ionic/angular';
 import { PerfilPage } from './perfil.page';
 
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { ProfeService } from 'src/app/services/profesor.service';
+
+
 
 const routes: Routes = [
   {
@@ -16,16 +19,18 @@ const routes: Routes = [
   }
 ];
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    
     RouterModule.forChild(routes)
   ],
   declarations: [PerfilPage],
   providers: [
-    EmailComposer
+    EmailComposer, ProfeService
   ]
 })
 export class PerfilPageModule {}

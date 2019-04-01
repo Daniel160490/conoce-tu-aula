@@ -15,10 +15,10 @@
       <ion-card-title>Información</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content>
-      <p>Tu profesor:</p>
-      <p>Cursos a los que imparte clase:</p>
-      <p>Asignaturas que imparte:</p>
+    <ion-card-content *ngFor="let teacher of _pfService.profesor">
+      <p><strong> Tu profesor: </strong> {{ teacher.nombre }} </p>
+      <p> <strong> Cursos a los que imparte clase: </strong> {{ teacher.clase }} </p>
+      <p> <strong>Asignaturas que imparte: </strong>{{ teacher.asignaturas }} </p>
     </ion-card-content>
   </ion-card>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, Platform } from '@ionic/angular';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { ProfeService } from 'src/app/services/profesor.service';
 
 @Component({
   selector: 'app-perfil',
@@ -19,6 +20,7 @@ export class PerfilPage implements OnInit {
     header: 'Motivo de la reunión',
     translucent: true
   }
+  
   // Motivos por los que se puede pedir una reunión
   motivoReunion: any = [
     {
@@ -38,8 +40,11 @@ export class PerfilPage implements OnInit {
     }
   ]
 
-  constructor(public navCtrl: NavController,private emailComposer:EmailComposer, public platform: Platform) { 
+  constructor( public _pfService: ProfeService, public navCtrl: NavController,private emailComposer:EmailComposer, public platform: Platform) { 
     console.log('PerfilPage');
+    this._pfService.cargarProfesor().subscribe( ()=> {
+      
+    });
   }
 
   ngOnInit() {

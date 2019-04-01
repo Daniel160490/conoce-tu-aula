@@ -12,6 +12,7 @@ export class PerfilPage implements OnInit {
   fecha: string = this.fechaCorta;
   minFecha: string = (new Date().getFullYear()-5).toString();
   maxFecha: string = (new Date().getFullYear()+5).toString();
+  confirm: boolean = false;
   
   customPopoverOptions: any = {
     header: 'Motivo de la reunión',
@@ -45,6 +46,11 @@ export class PerfilPage implements OnInit {
 
   accessMessage(){
     this.navCtrl.navigateForward('mailbox');
+  }
+
+  validateMessage(){
+    
+    
   }
 
 }

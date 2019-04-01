@@ -24,3 +24,5 @@
 #### Documentación de iconos:
 
 https://ionicframework.com/docs/v3/ionicons/
+
+https://www.flaticon.es/packs

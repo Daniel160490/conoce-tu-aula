@@ -47,3 +47,10 @@ ion-card{
     width: auto;
     filter: blur(40px);
 }
+
+.ionContent {
+    // background-image: url("assets/fondo.png");
+    background-color: darkcyan;
+    background-image: linear-gradient(darkcyan, cyan, white);
+    border-radius: 5%;
+}

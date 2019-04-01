@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { EmailComposerOriginal } from '@ionic-native/email-composer';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 @Component({
   selector: 'app-perfil',
@@ -37,7 +39,7 @@ export class PerfilPage implements OnInit {
     }
   ]
 
-  constructor(public navCtrl: NavController) { 
+  constructor(public navCtrl: NavController,private emailComposer:EmailComposer) { 
     console.log('PerfilPage');
   }
 
@@ -48,7 +50,19 @@ export class PerfilPage implements OnInit {
     this.navCtrl.navigateForward('mailbox');
   }
 
+  // Envio de un correo electronico al pulsar el boton
   validateMessage(){
+    let email = {
+      to: 'danigd71@gmail.com',
+      cc: '',
+      subject: 'Correo de prueba',
+      body: 'Esto es un correo de prueba...',
+      isHtml: true
+    };
+    console.log(email);
+    
+    this.emailComposer.open(email);
+    console.log(this.emailComposer.open(email));
     
     // para enviar un correo al validar boton
     // https://es.stackoverflow.com/questions/187794/enviar-correo-desde-ionic

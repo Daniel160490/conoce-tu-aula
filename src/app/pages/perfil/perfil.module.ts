@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { PerfilPage } from './perfil.page';
 
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +23,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PerfilPage]
+  declarations: [PerfilPage],
+  providers: [
+    EmailComposer
+  ]
 })
 export class PerfilPageModule {}

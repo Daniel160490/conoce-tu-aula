@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { EmailComposerOriginal } from '@ionic-native/email-composer';
+import { NavController, Platform } from '@ionic/angular';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 @Component({
@@ -39,7 +38,7 @@ export class PerfilPage implements OnInit {
     }
   ]
 
-  constructor(public navCtrl: NavController,private emailComposer:EmailComposer) { 
+  constructor(public navCtrl: NavController,private emailComposer:EmailComposer, public platform: Platform) { 
     console.log('PerfilPage');
   }
 
@@ -52,9 +51,11 @@ export class PerfilPage implements OnInit {
 
   // Envio de un correo electronico al pulsar el boton
   validateMessage(){
+
     let email = {
+      app: 'gmail',
       to: 'danigd71@gmail.com',
-      cc: '',
+      cc: 'danigd71@gmail.com',
       subject: 'Correo de prueba',
       body: 'Esto es un correo de prueba...',
       isHtml: true

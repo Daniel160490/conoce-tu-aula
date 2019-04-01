@@ -50,6 +50,8 @@ export class PerfilPage implements OnInit {
 
   validateMessage(){
     
+    // para enviar un correo al validar boton
+    // https://es.stackoverflow.com/questions/187794/enviar-correo-desde-ionic
     
   }
 

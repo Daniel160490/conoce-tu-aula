@@ -15,6 +15,10 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+// Sharing
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { File } from '@ionic-native/file/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [ ],
@@ -30,6 +34,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     StatusBar,
     SplashScreen,
     AngularFirestore,
+    SocialSharing,
+    File,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

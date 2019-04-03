@@ -32,18 +32,18 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    PendientesPageModule,
-    TerminadasPageModule,
-    AgregarPageModule,
+    // PendientesPageModule,
+    // TerminadasPageModule,
+    // AgregarPageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     TasksPage
   ],
   entryComponents: [
-    PendientesPage,
-    TerminadasPage,
-    AgregarPage
+    // PendientesPage,
+    // TerminadasPage,
+    // AgregarPage
   ],
   providers: [
     TareasService

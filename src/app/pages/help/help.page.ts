@@ -27,4 +27,7 @@ export class HelpPage  {
     this.navCtrl.navigateForward('help3');
   }
 
+  // DOCUMENTACION PARA COMPARTIR APLICACION CON REDES SOCIALES
+  // https://ionicframework.com/docs/native/social-sharing
+
 }

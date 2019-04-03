@@ -18,10 +18,18 @@
     <ion-fab vertical="top" horizontal="end" slot="fixed">
       <ion-img style="width: 40%; height: 40%; float: right;" src="/assets/profIcon.svg"></ion-img>
     </ion-fab>
-    <ion-card-content *ngFor="let teacher of _pfService.profesor">
+    <ion-card-content *ngFor="let teacher of _pfService.profesor; let i = index">
       <p><strong> Tu profesor: </strong> {{ teacher.nombre }}, {{teacher.apellido}} </p>
       <p> <strong> Cursos a los que imparte clase: </strong> {{ teacher.clase }} </p>
-      <p> <strong> Asignaturas que imparte: </strong> {{ teacher.asignaturas }} </p>
+      <div>
+          <p> <strong> Asignaturas que imparte: </strong> </p>
+        <ul>
+          <li>
+              {{ teacher.asignaturas[i] }}
+          </li>
+        </ul>
+      </div>
+      <!-- <p> <strong> Asignaturas que imparte: </strong> {{ teacher.asignaturas }} </p> -->
     </ion-card-content>
   </ion-card>
 

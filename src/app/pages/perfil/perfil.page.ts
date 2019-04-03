@@ -58,12 +58,13 @@ export class PerfilPage implements OnInit {
   validateMessage(){
 
     let email = {
-      app: 'gmail',
-      to: 'danigd71@gmail.com',
-      cc: 'danigd71@gmail.com',
+
+      to: 'Pablo1990_7@hotmail.com',
+      cc: '',
       subject: 'Correo de prueba',
       body: 'Esto es un correo de prueba...',
       isHtml: true
+
     };
     console.log(email);
     

@@ -3,11 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavParams } from '@ionic/angular';
 
 import { AgregarPage } from './agregar.page';
-import { ListasPageModule } from '../listas/listas.module';
-import { ListasPage } from '../listas/listas.page';
 
 const routes: Routes = [
   {
@@ -24,5 +22,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [AgregarPage],
+  providers: [NavParams]
 })
 export class AgregarPageModule {}

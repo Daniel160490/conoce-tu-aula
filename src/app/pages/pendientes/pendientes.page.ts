@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
+import { TareasService } from 'src/app/services/tareas.service';
 
 @Component({
   selector: 'app-pendientes',
@@ -8,7 +9,7 @@ import { NavController, AlertController } from '@ionic/angular';
 export class PendientesPage {
 
 
-  constructor(private navCtrl: NavController, private alertCtrl: AlertController) { 
+  constructor(public tareasService: TareasService, private navCtrl: NavController, private alertCtrl: AlertController) { 
     console.log('PendientesPage');
   }
 

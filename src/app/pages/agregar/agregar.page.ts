@@ -14,7 +14,7 @@ export class AgregarPage  {
   nombreItem: string = '';
   agregarPage: 'agregar';
 
-  constructor(public tareaService: TareasService,private navParams: NavParams ) {
+  constructor(public tareaService: TareasService, private navParams: NavParams ) {
    
     const titulo = this.navParams.get('titulo');
     if( this.navParams.get('lista')){

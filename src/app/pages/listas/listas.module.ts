@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavParams } from '@ionic/angular';
 
 import { ListasPage } from './listas.page';
 import { FiltroCompletadoPipe } from 'src/app/pipes/filtro-completado/filtro-completado';
@@ -22,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ListasPage, FiltroCompletadoPipe]
+  declarations: [ListasPage, FiltroCompletadoPipe],
 })
 export class ListasPageModule {}

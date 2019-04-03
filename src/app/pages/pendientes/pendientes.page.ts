@@ -29,7 +29,7 @@ export class PendientesPage {
           if(data.titulo.length === 0) {
             return;
           }
-          this.navCtrl.navigateForward('/agregar');
+          this.navCtrl.navigateForward('agregar');
         }
       }]
     });

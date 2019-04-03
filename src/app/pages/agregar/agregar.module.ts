@@ -21,10 +21,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListasPageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [AgregarPage],
-  entryComponents: [ListasPage]
 })
 export class AgregarPageModule {}

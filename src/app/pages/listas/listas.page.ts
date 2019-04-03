@@ -18,7 +18,7 @@ export class ListasPage  {
 
   // Metodo para seleccionar una lista
   listaSeleccionada( lista: Lista ){
-    this.navCtrl.navigateForward('/agregar');
+    this.navCtrl.navigateForward('agregar');
   }
 
   // Metodo para eliminar una lista de tareas 

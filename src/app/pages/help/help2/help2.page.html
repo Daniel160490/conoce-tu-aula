@@ -1,15 +1,71 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="help"></ion-back-button>
-      </ion-buttons>
-      <ion-title>
-        ¿Cómo ver las tareas?
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="help"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      ¿Cómo ver las tareas?
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-content>
-      
-  </ion-content>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header></ion-card-header>
+    <ion-card-content>
+      <p> Para poder ver tus tareas, solo tienes que acceder en el menú al apartado de <strong>Tareas</strong></p>
+      <p> Una vez en esta pantalla, en ella podrás ver el apartado de tareas pendientes y tareas terminadas.</p>
+      <div>
+        <ul>
+          <li> <strong> Tareas pendientes: </strong> Aquí encontrarás las tareas que aún tienes por hacer.</li>
+          <li> <strong> Tareas terminadas: </strong> Aquí encontrarás las tareas que tienes terminadas.</li>
+        </ul>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card text-center style="margin-top: 5%;">
+    <ion-card-title> ¿Ha sido de ayuda? </ion-card-title>
+    <ion-card-content>
+      <p> Marca aquí si esto ha sido de ayuda o no. </p>
+      <div class="row">
+        <div class="col-6">
+          <ion-button shape="round" size="small" (click)="aprobacionBuena()">
+            <ion-icon name="thumbs-up"></ion-icon>
+          </ion-button>
+        </div>
+
+        <div class="col-6">
+          <ion-button shape="round" color="danger" size="small" (click)="aprobacionMala()">
+            <ion-icon name="thumbs-down"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mensajes de aprovacion -->
+  <ion-card *ngIf="desaprobacion" text-center>
+    <ion-card-header>
+      <ion-img style="height: 20%; width: 20%;" src="/assets/sad.png"></ion-img>
+    </ion-card-header>
+    <ion-card-content>
+      <p> UPS.... Sentimos que no haya sido de ayuda para ti. </p>
+      <p> Trataremos de mejorar. </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="aprobacion" text-center>
+    <ion-card-header>
+      <ion-img style="height: 20%; width: 20%;" src="/assets/happy.png"></ion-img>
+    </ion-card-header>
+    <ion-card-content>
+      <p> Gracias por tu colaboración. </p>
+    </ion-card-content>
+  </ion-card>
+  <!-- Mensajes de aprovacion -->
+
+</ion-content>

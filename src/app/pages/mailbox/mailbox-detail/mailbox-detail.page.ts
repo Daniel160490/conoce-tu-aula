@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import * as firebase from 'Firebase';
+//import * as firebase from 'Firebase';
 
 @Component({
   selector: 'app-mailbox-detail',

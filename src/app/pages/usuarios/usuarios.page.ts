@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosPage implements OnInit {
 
+  usuariosPAge: 'usuariosPage';
+  
   constructor() { }
 
   ngOnInit() {

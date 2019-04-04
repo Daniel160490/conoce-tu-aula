@@ -9,50 +9,59 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Información</ion-card-title>
-    </ion-card-header>
-
+<ion-content padding>
+  <div>
+    <h1>Información</h1>
     <ion-fab vertical="top" horizontal="end" slot="fixed">
-      <ion-img style="width: 40%; height: 40%; float: right;" src="/assets/profIcon.svg"></ion-img>
+      <ion-img
+        style="width: 40%; height: 40%; float: right;"
+        src="/assets/profIcon.svg"
+      ></ion-img>
     </ion-fab>
-    <ion-card-content *ngFor="let teacher of _pfService.profesor; let i = index">
-      <p><strong> Tu profesor: </strong> {{ teacher.nombre }}, {{teacher.apellido}} </p>
-      <p> <strong> Cursos a los que imparte clase: </strong> {{ teacher.clase }} </p>
+    <div *ngFor="let teacher of _pfService.profesor; let i = index">
+      <p>
+        <strong> Tu profesor: </strong> {{ teacher.nombre }},
+        {{ teacher.apellido }}
+      </p>
+      <p>
+        <strong> Cursos a los que imparte clase: </strong> {{ teacher.clase }}
+      </p>
       <div>
-          <p> <strong> Asignaturas que imparte: </strong> </p>
+        <p><strong> Asignaturas que imparte: </strong></p>
         <ul>
           <li>
-              {{ teacher.asignaturas[i] }}
+            {{ teacher.asignaturas[i] }}
           </li>
         </ul>
       </div>
       <!-- <p> <strong> Asignaturas que imparte: </strong> {{ teacher.asignaturas }} </p> -->
-    </ion-card-content>
-  </ion-card>
+    </div>
+  </div>
+
+  <ion-item-divider></ion-item-divider>
 
   <!-- Selector de la fecha -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>¿Necesitas una reunión?</ion-card-title>
-      <ion-card-subtitle>
-        <p>Selecciona una fecha para solicitar una reunión con el profesor.</p>
-        <p>Esto mandará un correo al mismo y este, confirmará la cita,</p>
-        <p>
-          cuando esto ocurra, aparecerá un recuadro más abajo confirmando la
-          reunión.
-        </p>
-      </ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content>
+  <div>
+    <h1>¿Necesitas una reunión?</h1>
+    <h6>Selecciona una fecha para solicitar una reunión con el profesor.</h6>
+    <h6>Esto mandará un correo al mismo y este, confirmará la cita,</h6>
+    <h6>
+      cuando esto ocurra, aparecerá un recuadro más abajo confirmando la
+      reunión.
+    </h6>
+    <div>
       <ion-list>
         <ion-item>
           <ion-label>Fecha</ion-label>
-          <ion-datetime displayFormat="DD/MM/YYYY" pikerFormat="YYYY MM DD" [(ngModel)]="fecha" cancelText="Cancelar"
-            doneText="OK" min="{{ minFecha }}" max="{{ maxFecha }}">
+          <ion-datetime
+            displayFormat="DD/MM/YYYY"
+            pikerFormat="YYYY MM DD"
+            [(ngModel)]="fecha"
+            cancelText="Cancelar"
+            doneText="OK"
+            min="{{ minFecha }}"
+            max="{{ maxFecha }}"
+          >
           </ion-datetime>
         </ion-item>
         <ion-item>
@@ -60,7 +69,9 @@
         </ion-item>
         <ion-item>
           <ion-label> Motivo de la reunión </ion-label>
-          <ion-select [interfaceOptions]="customPopoverOptions" interface="action-sheet"
+          <ion-select
+            [interfaceOptions]="customPopoverOptions"
+            interface="action-sheet"
             placeholder="Selecciona un motivo">
             <ion-select-option *ngFor="let moti of motivoReunion">
               {{ moti.title }}
@@ -68,36 +79,33 @@
           </ion-select>
         </ion-item>
       </ion-list>
-      <ion-button expand="block" shape="round" *ngIf="!confirm" (click)="validateMessage()"> Solicitar reunión
+      <ion-button expand="block" shape="round" *ngIf="!confirm" (click)="validateMessage()">
+        Solicitar reunión
       </ion-button>
+    </div>
+  </div>
 
-    </ion-card-content>
-  </ion-card>
+  <ion-item-divider></ion-item-divider>
 
   <!-- Card para añadir a los usuarios desde el perfil del profesor -->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Añadir alumnos</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Espacio para añadir los alumnos al sistema y poder asignarles tareas.</p>
-      <ion-button expand="block" shape="round" (click)="addAlumn()"> 
-        <ion-icon name="add-circle"></ion-icon>   
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
+  <div>
+    <h1>Añadir alumnos</h1>
+    <p>
+      Espacio para añadir los alumnos al sistema y poder asignarles tareas.
+    </p>
+    <ion-button expand="block" shape="round" (click)="addAlumn()">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-button>
+  </div>
+
+  <ion-item-divider></ion-item-divider>
 
   <!-- Card con la confirmacion del correo -->
-  <ion-card text-center *ngIf="confirm">
-    <ion-card-header>
-      <ion-card-title>Confirmación de la reunión</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <ion-img style="width: 50px; margin: 0 auto 10px auto; " src="/assets/confirm.svg"></ion-img>
-      <p text-center>Su reunión ha sido confirmada</p>
-    </ion-card-content>
-  </ion-card>
+  <div text-center *ngIf="confirm">
+    <h1> Confirmación de la reunión </h1>
+    <ion-img style="width: 50px; margin: 0 auto 10px auto; " src="/assets/confirm.svg"></ion-img>
+    <p text-center>Su reunión ha sido confirmada</p>
+  </div>
 
   <!-- Boton para enviar mensajes -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">

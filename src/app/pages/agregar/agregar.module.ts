@@ -22,7 +22,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [AgregarPage],
-  entryComponents: [NavParams],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AgregarPageModule {}

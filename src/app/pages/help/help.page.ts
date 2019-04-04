@@ -52,14 +52,14 @@ export class HelpPage  {
   }
 
   async shareFacebook(){
-    let file = await this.resolveLocalFile();
+    // let file = await this.resolveLocalFile();
  
-    // Image or URL works
-    this.socialSharing.shareViaFacebook(null, file.nativeURL, null).then(() => {
-      this.removeTempFile(file.name);
-    }).catch((e) => {
-      // Error!
-    });
+    // // Image or URL works
+    // this.socialSharing.shareViaFacebook(null, file.nativeURL, null).then(() => {
+    //   this.removeTempFile(file.name);
+    // }).catch((e) => {
+    //   // Error!
+    // });
   }
 
   async shareTwitter(){

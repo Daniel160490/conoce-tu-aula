@@ -10,26 +10,21 @@
 </ion-header>
 
 
-<ion-content>
-  <ion-card>
-    <ion-card-header></ion-card-header>
-    <ion-card-content>
-      <p> Para poder ver tus tareas, solo tienes que acceder en el menú al apartado de <strong>Tareas</strong></p>
-      <p> Una vez en esta pantalla, en ella podrás ver el apartado de tareas pendientes y tareas terminadas.</p>
-      <div>
-        <ul>
-          <li> <strong> Tareas pendientes: </strong> Aquí encontrarás las tareas que aún tienes por hacer.</li>
-          <li> <strong> Tareas terminadas: </strong> Aquí encontrarás las tareas que tienes terminadas.</li>
-        </ul>
-      </div>
-    </ion-card-content>
-  </ion-card>
+<ion-content padding> 
+  <div>
+    <p> Para poder ver tus tareas, solo tienes que acceder en el menú al apartado de <strong>Tareas</strong></p>
+    <p> Una vez en esta pantalla, en ella podrás ver el apartado de tareas pendientes y tareas terminadas.</p>
+    <div>
+      <ul>
+        <li> <strong> Tareas pendientes: </strong> Aquí encontrarás las tareas que aún tienes por hacer.</li>
+        <li> <strong> Tareas terminadas: </strong> Aquí encontrarás las tareas que tienes terminadas.</li>
+      </ul>
+    </div>
+  </div>
 
-
-  <ion-card text-center style="margin-top: 5%;">
-    <ion-card-title> ¿Ha sido de ayuda? </ion-card-title>
-    <ion-card-content>
-      <p> Marca aquí si esto ha sido de ayuda o no. </p>
+  <div text-center style="margin-top: 5%;">
+    <h1> ¿Ha sido de ayuda? </h1>
+    <p> Marca aquí si esto ha sido de ayuda o no. </p>
       <div class="row">
         <div class="col-6">
           <ion-button shape="round" size="small" (click)="aprobacionBuena()">
@@ -43,9 +38,7 @@
           </ion-button>
         </div>
       </div>
-
-    </ion-card-content>
-  </ion-card>
+  </div>
 
   <!-- Mensajes de aprovacion -->
   <ion-card *ngIf="desaprobacion" text-center>

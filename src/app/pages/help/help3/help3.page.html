@@ -4,44 +4,38 @@
       <ion-back-button defaultHref="help"></ion-back-button>
     </ion-buttons>
     <ion-title>
-      ¿Qué puedo hacer en esta aplicación?
+      ¿Qué puedo hacer aquí?
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content>
+<ion-content padding>
 
-  <ion-card>
-    <ion-card-content>
-      <p> En <strong>Conoce tu aula </strong> podrás gestionar tus tareas diarias. </p>
-      <p> El profesor podrá guardar aquí tus tareas como si de una agenda se tratase. </p>
-      <p> Además puedes visualizar de un solo vistazo el calendario. </p>
-      <p> ¿Necesitar una reunión con el profesor? Sólo tienes que acceder al apartado del profesor para solicitarla, recuerda seleccionar una fecha y un motivo.</p>
-    </ion-card-content>
-  </ion-card>
+  <div>
+    <p> En <strong>Conoce tu aula </strong> podrás gestionar tus tareas diarias. </p>
+    <p> El profesor podrá guardar aquí tus tareas como si de una agenda se tratase. </p>
+    <p> Además puedes visualizar de un solo vistazo el calendario. </p>
+    <p> ¿Necesitar una reunión con el profesor? Sólo tienes que acceder al apartado del profesor para solicitarla, recuerda seleccionar una fecha y un motivo.</p>
+  </div>
 
-
-  <ion-card text-center style="margin-top: 5%;">
-    <ion-card-title> ¿Ha sido de ayuda? </ion-card-title>
-    <ion-card-content>
-      <p> Marca aquí si esto ha sido de ayuda o no. </p>
-      <div class="row">
-        <div class="col-6">
-          <ion-button shape="round" size="small" (click)="aprobacionBuena()">
-            <ion-icon name="thumbs-up"></ion-icon>
-          </ion-button>
-        </div>
-
-        <div class="col-6">
-          <ion-button shape="round" color="danger" size="small" (click)="aprobacionMala()">
-            <ion-icon name="thumbs-down"></ion-icon>
-          </ion-button>
-        </div>
+  <div text-center style="margin-top: 5%;">
+    <h1> ¿Ha sido de ayuda? </h1>
+    <p> Marca aquí si esto ha sido de ayuda o no. </p>
+    <div class="row">
+      <div class="col-6">
+        <ion-button shape="round" size="small" (click)="aprobacionBuena()">
+          <ion-icon name="thumbs-up"></ion-icon>
+        </ion-button>
       </div>
 
-    </ion-card-content>
-  </ion-card>
+      <div class="col-6">
+        <ion-button shape="round" color="danger" size="small" (click)="aprobacionMala()">
+          <ion-icon name="thumbs-down"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </div>
 
   <!-- Mensajes de aprovacion -->
   <ion-card *ngIf="desaprobacion" text-center>

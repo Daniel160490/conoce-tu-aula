@@ -9,49 +9,60 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content padding>
+  <div>
+    <p>
+      Para poder solicitar una reunión, has de acceder al menú principal de la
+      aplicación.
+    </p>
+    <p>
+      Después accede al perfil del profesor, pulsando en
+      <strong>'Profesor'.</strong>
+    </p>
+    <p>
+      Una vez estés en esta pantalla, selecciona una fecha y un motivo, después
+      solo tendrás que pulsar el botón <strong>SOLICITAR REUNIÓN</strong> y
+      listo.
+    </p>
+    <p>El profesor o profesora recibirá una solicitud de la reunión.</p>
+    <p></p>
+    <p>
+      En el momento que el profesor acepte la reunión, debajo del botón
+      aparecerá un mensaje de confirmación.
+    </p>
+  </div>
 
-<ion-content>
-  <ion-card>
-    <ion-card-content>
-      <p> Para poder solicitar una reunión, has de acceder al menú principal de la aplicación. </p>
-      <p> Después accede al perfil del profesor, pulsando en <strong>'Profesor'.</strong> </p>
-      <p> Una vez estés en esta pantalla, selecciona una fecha y un motivo, después solo tendrás que pulsar el botón
-        <strong>SOLICITAR REUNIÓN</strong> y listo.</p>
-      <p> El profesor o profesora recibirá una solicitud de la reunión. </p>
-      <p> </p>
-      <p> En el momento que el profesor acepte la reunión, debajo del botón aparecerá un mensaje de confirmación. </p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card text-center style="margin-top: 5%;">
-    <ion-card-title> ¿Ha sido de ayuda? </ion-card-title>
-    <ion-card-content>
-      <p> Marca aquí si esto ha sido de ayuda o no. </p>
-      <div class="row">
-        <div class="col-6">
-          <ion-button shape="round" size="small" (click)="aprobacionBuena()">
-            <ion-icon name="thumbs-up"></ion-icon>
-          </ion-button>
-        </div>
-
-        <div class="col-6">
-          <ion-button shape="round" color="danger" size="small" (click)="aprobacionMala()">
-            <ion-icon name="thumbs-down"></ion-icon>
-          </ion-button>
-        </div>
+  <div text-center style="margin-top: 5%;">
+    <h1>¿Ha sido de ayuda?</h1>
+    <p>Marca aquí si esto ha sido de ayuda o no.</p>
+    <div class="row">
+      <div class="col-6">
+        <ion-button shape="round" size="small" (click)="aprobacionBuena()">
+          <ion-icon name="thumbs-up"></ion-icon>
+        </ion-button>
       </div>
 
-    </ion-card-content>
-  </ion-card>
+      <div class="col-6">
+        <ion-button
+          shape="round"
+          color="danger"
+          size="small"
+          (click)="aprobacionMala()"
+        >
+          <ion-icon name="thumbs-down"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </div>
 
   <!-- Mensajes de aprovacion -->
   <ion-card *ngIf="desaprobacion" text-center>
     <ion-card-header>
-        <ion-img style="height: 20%; width: 20%;" src="/assets/sad.png"></ion-img>
+      <ion-img style="height: 20%; width: 20%;" src="/assets/sad.png"></ion-img>
     </ion-card-header>
     <ion-card-content>
-      <p> UPS.... Sentimos que no haya sido de ayuda para ti. </p>
-      <p> Trataremos de mejorar. </p>
+      <p>UPS.... Sentimos que no haya sido de ayuda para ti.</p>
+      <p>Trataremos de mejorar.</p>
     </ion-card-content>
   </ion-card>
 
@@ -60,8 +71,7 @@
       <ion-img style="height: 20%; width: 20%;" src="/assets/happy.png"></ion-img>
     </ion-card-header>
     <ion-card-content>
-      <p> Gracias por tu colaboración. </p>
+      <p>Gracias por tu colaboración.</p>
     </ion-card-content>
   </ion-card>
-
 </ion-content>

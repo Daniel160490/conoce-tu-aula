@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ContentChild } from '@angular/core';
 import { NavController, Platform } from '@ionic/angular';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { ProfeService } from 'src/app/services/profesor.service';
@@ -10,11 +10,13 @@ import { ProfeService } from 'src/app/services/profesor.service';
 })
 export class PerfilPage implements OnInit {
 
+  @ViewChild(ContentChild, { read: ContentChild }) private content: ContentChild;
   fechaCorta: string = new Date().toISOString();
   fecha: string = this.fechaCorta;
   minFecha: string = (new Date().getFullYear() - 5).toString();
   maxFecha: string = (new Date().getFullYear() + 5).toString();
   confirm: boolean = false;
+  isShown: boolean = false;
 
   customPopoverOptions: any = {
     header: 'Motivo de la reunión',
@@ -78,6 +80,13 @@ export class PerfilPage implements OnInit {
 
   addAlumn() {
     this.navCtrl.navigateForward('usuarios');
+  }
+
+  scrollFunction(event: any){
+    const dimensions = this.content.read.getContentDimensions(); // GET THE ion-content DIMENSIONS
+    const bottomPosition = dimensions.contentHeight + dimensions.scrollTop; // THE contentHeight IS THE SIZE OF YOUR CONTENT SHOWN ON SCREEN, THE scrollTop IS HOW MUCH YOU'VE SCROLLED FROM TOP OF YOUR CONTENT.
+    const screenSize = dimensions.scrollHeight; // TOTAL CONTENT SIZE
+    this.isShown = screenSize - bottomPosition <= 10 ? true : false;
   }
 
 }

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Lista, ListaItem } from 'src/app/models';
 import { TareasService } from 'src/app/services/tareas.service';
-import { NavParams, NavController } from '@ionic/angular';
+import { NavParams, NavController, AlertController } from '@ionic/angular';
 import { PendientesPage } from '../pendientes/pendientes.page';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-agregar',
@@ -11,60 +12,49 @@ import { PendientesPage } from '../pendientes/pendientes.page';
 })
 export class AgregarPage   {
   
-  lista: Lista;
-  nombreItem: string = '';
-  agregarPage: 'agregar';
+  item: any;
+  tabIndex: number;
+  itemIndex: number;
+  buttons: Array<string>;
 
-  constructor(public tareaService: TareasService, public navCtrl: NavController, public navParams: NavParams ) {
-       
-    const titulo = this.navParams.get('titulo');
-    if( this.navParams.get('lista')){
-      this.lista = this.navParams.get('lista');
-    } else {
-      this.lista = new Lista( titulo );
-      this.tareaService.agregarTarea(this.lista);
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              public alertController: AlertController,
+              private ListService: TareasService) { 
+    this.buttons = ["radio-button-off", "radio-button-on", "snow", "flame"];
+    this.itemIndex = +this.route.snapshot.paramMap.get('item'); 
+    if (this.itemIndex >= 0) {
+      this.item = Object.assign({}, this.ListService.getItem( this.itemIndex));
+      //this.item.date = new Date(this.item.date).toISOString();
     }
-    console.log(titulo);
+    else {
+      this.item = { date: new Date().toISOString(), task: '', icon: 'radio-button-off'};
+    } 
   }
 
-  agregarItem(){
+  async error(message) {
+    const alert = await this.alertController.create({
+      message: message,
+      buttons: ['OK']
+    });
 
-    // if(this.nombreItem.length === 0){
-    //   return;
-    // }
-
-    // const nuevoItem = new ListaItem( this.nombreItem);
-    // this.lista.items.push(nuevoItem);
-
-    // this.tareaService.guardarStorage();
-
-    // this.nombreItem = '';
+    await alert.present();
   }
 
-
-  actualizarItem( item: ListaItem ){
-    // item.completado = !item.completado;
-
-    // const pendientes = this.lista.items.filter( itemData => {
-    //   return !itemData.completado;
-    // }).length;
-
-
-    // if(pendientes === 0){
-    //   this.lista.terminada = true;
-    //   this.lista.terminadaEn = new Date();
-    // } else {
-    //   this.lista.terminada = false;
-    //   this.lista.terminadaEn = null;
-    // }
-
-    // this.tareaService.guardarStorage();
-  }
-
-
-  borrar( idx: number ){
-    // this.lista.items.splice( idx, 1);
-    // this.tareaService.guardarStorage();
+  save() {
+    if (!this.item.task.length) {
+      this.error('The task cannot be empty');
+    }
+    else {
+      //this.item.date = document.querySelector('.datetime-text').innerHTML;
+      if (this.itemIndex >= 0) {
+        this.ListService.setItem(this.item, this.itemIndex);
+      }
+      else {
+        this.ListService.setItem(this.item, null);      
+      }
+      this.router.navigate(['pendientes']);
+    }
   }
 
 }

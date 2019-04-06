@@ -23,7 +23,7 @@ export class ListasPage  {
 
   // Metodo para eliminar una lista de tareas 
   borrarLista( lista: Lista ){
-    this.tareasService.borrarTarea(lista);
+    this.tareasService.deleteList(lista);
   }
 
   // Metodo para editar una lista de tareas
@@ -47,7 +47,7 @@ export class ListasPage  {
             return;
           }
           lista.titulo = data.titulo;
-          this.tareasService.guardarStorage();
+          this.tareasService.saveList(lista);
         }
       }]
     });

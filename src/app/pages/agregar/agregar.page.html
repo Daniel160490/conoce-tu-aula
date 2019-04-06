@@ -3,8 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tasks"></ion-back-button>
     </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button color="danger" href="/tasks"><ion-icon slot="icon-only" name="close"></ion-icon></ion-button>
+      <ion-button color="primary" (click)="save()"><ion-icon slot="icon-only" name="checkmark"></ion-icon></ion-button>
+    </ion-buttons>  
     <ion-title>
-      {{ lista.titulo }}
+      Añade la tarea
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,39 +17,19 @@
 <ion-content>
 
   <ion-list>
-    <ion-list-header> Tareas por hacer </ion-list-header>
-
     <ion-item>
-      <ion-label floating> Nueva Tarea </ion-label>
-      <ion-input [(ngModel)]="nombreItem"
-                (keyup.enter)="agregarItem()"
-                type="text">
-      </ion-input>
+      <ion-label position="floating"> Selecciona una fecha </ion-label>
+      <ion-datetime display-format="D MMM YYYY" max="2050-12-31" [(ngModel)]="item.date"></ion-datetime>      
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating"> Introduce la tarea </ion-label>
+      <ion-input [(ngModel)]="item.task"></ion-input>
     </ion-item>
   </ion-list>
-
-  <ion-list *ngIf = "lista.items.length > 0">
-
-    <ion-list-header> Tareas por hacer </ion-list-header>
-    <!-- Iconos que aparecen al deslizar el elemento -->
-    <ion-item-sliding *ngFor="let item of lista.items; let i = index" class="animated fadeInDown">
-      <button ion-item detail-none (click)="actualizarItem(item)">
-          <ion-icon *ngIf="item.completado" name="checkbox-outline" item-start></ion-icon>
-          <ion-icon *ngIf="!item.completado" name="square-outline" item-start></ion-icon>
-          {{ item.desc }}
-      </button>
-
-      <ion-item-options side="right">
-        <!-- Boton de borrar la seleccion -->
-        <button (click)="borrar(i)"
-                ion-button icon-only color="danger">
-          <ion-icon name="close"></ion-icon>
-        </button>
-  
-      </ion-item-options>
-      
-    </ion-item-sliding>
-
-  </ion-list>
+  <ion-segment [(ngModel)]="item.icon">
+    <ion-segment-button *ngFor="let button of buttons" [value]="button">
+      <ion-icon [name]="button"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
 
 </ion-content>

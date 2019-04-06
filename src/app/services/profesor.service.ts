@@ -27,6 +27,7 @@ export class ProfeService {
                     this.profesor.unshift(profe);
                 }
                 return this.profesor;
-            }));
+            })
+        );
     }
 }

@@ -3,29 +3,47 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="tasks"></ion-back-button>
       </ion-buttons>
-    <ion-title> Tareas pendientes </ion-title>
+      <ion-buttons slot="end">
+          <ion-button (click)="toggleReorder()"><ion-icon slot="icon-only" name="reorder"></ion-icon></ion-button>
+          <ion-button (click)="deleteItem()" color="danger"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-button> 
+      </ion-buttons>
+    <ion-title> Listado de tareas </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title style="text-align: center;"> Listado de las tareas pendientes </ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <p> <ion-icon name="information-circle-outline"></ion-icon> Arrastra la tarea hacia la derecha para eliminarla.</p>
+<ion-content padding>
+  <div>
+    <h1 style="text-align: center;"> Listado de las tareas pendientes </h1>
+    <p> <ion-icon name="information-circle-outline"></ion-icon> Arrastra la tarea hacia la derecha para eliminarla.</p>
       <p> O arrastra la tarea hacia la izquierda para editar su nombre. </p>
-    </ion-card-content>
-  </ion-card>
+  </div>
   
   <!-- Componente de las listas de tareas -->
-  <app-listas></app-listas>
+  <!--<app-listas></app-listas>-->
+
+  <ion-list #myList lines="full">
+        <ion-reorder-group [disabled]="!reorder">
+          <ion-item-sliding *ngFor="let item of tabs[i].list; let j=index">
+            <ion-item [routerLink]="['/AddEditItem', { tab:i, item:j }]">
+              <ion-label text-wrap>
+                <h2>{{item.task}}</h2>
+                <p>{{item.date}}</p>
+              </ion-label>
+              <ion-icon slot="end" [name]="item.icon"></ion-icon>
+              <ion-reorder slot="end"></ion-reorder>
+            </ion-item>
+            <ion-item-options side="start">
+              <ion-item-option color="danger" (click)="deleteItem(j)">
+                <ion-icon slot="icon-only" name="trash"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-reorder-group>
+      </ion-list>
 
   <!-- Boton para añadir nuevas tareas -->
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="agregarLista()">
+    <ion-fab-button [routerLink]="['/agregar']">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

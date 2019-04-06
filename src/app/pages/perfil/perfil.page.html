@@ -86,18 +86,13 @@
   </div>
 
   <ion-item-divider></ion-item-divider>
-
-  <!-- Card para añadir a los usuarios desde el perfil del profesor -->
   <div>
-    <h1>Añadir alumnos</h1>
-    <p>
-      Espacio para añadir los alumnos al sistema y poder asignarles tareas.
-    </p>
-    <ion-button expand="block" shape="round" (click)="addAlumn()">
-      <ion-icon name="add-circle"></ion-icon>
+    <h1> Mis alumnos </h1>
+    <p> Pulsa aquí para poder gestionar tus alumnos.</p>
+    <ion-button expand="block" shape="round" (click)="loadAlumnos()">
+      Gestión de alumnos
     </ion-button>
   </div>
-
   <ion-item-divider></ion-item-divider>
 
   <!-- Card con la confirmacion del correo -->
@@ -108,11 +103,10 @@
   </div>
 
   <!-- Boton para enviar mensajes -->
-  <div>
-    <ion-fab vertical="bottom" horizontal="left" slot="fixed">
-      <ion-fab-button (click)="accessMessage()">
-        <ion-icon name="mail"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-  </div>
+  <ion-fab vertical="bottom" horizontal="left" slot="fixed">
+    <ion-fab-button (click)="accessMessage()">
+      <ion-icon name="mail"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
 </ion-content>

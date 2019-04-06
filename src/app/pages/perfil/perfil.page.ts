@@ -89,4 +89,8 @@ export class PerfilPage implements OnInit {
     this.isShown = screenSize - bottomPosition <= 10 ? true : false;
   }
 
+  loadAlumnos() {
+    this.navCtrl.navigateForward('alumnos');
+  }
+
 }

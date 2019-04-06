@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'help1', loadChildren: './pages/help/help1/help1.module#HelpPage1Module' },
   { path: 'help2', loadChildren: './pages/help/help2/help2.module#HelpPage2Module' },
   { path: 'help3', loadChildren: './pages/help/help3/help3.module#HelpPage3Module' },  { path: 'usuarios', loadChildren: './pages/usuarios/usuarios.module#UsuariosPageModule' },
+  { path: 'alumnos', loadChildren: './pages/alumnos/alumnos.module#AlumnosPageModule' },
 
 ];
 

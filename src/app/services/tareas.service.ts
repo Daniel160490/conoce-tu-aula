@@ -1,4 +1,4 @@
-import { Lista } from './../models/lista.model';
+
 import { Injectable } from '@angular/core';
 
 
@@ -7,46 +7,56 @@ import { Injectable } from '@angular/core';
 })
 export class TareasService{
 
-    listas: Lista[] = [];
-
-    constructor(){
-        //Al cargar la pantalla carga las tareas si las hay
-        this.cargarStorage();
+    list: any;
+    
+    constructor() {
+        this.list = [[]];
     }
 
-    // Añade una tarea nueva
-    agregarTarea( lista: Lista){
-        this.listas.push( lista );
-        this.guardarStorage();
-    }
-
-    // Borra una tarea seleccionada
-    borrarTarea( lista: Lista ){
-        this.listas = this.listas.filter( listData => {
-            return listData.id !== lista.id;
-        });
-        this.guardarStorage();
-    }
-
-    // Guarda las tareas en local
-    // TODO guardar en base de datos
-    guardarStorage(){
-        localStorage.setItem('data', JSON.stringify( this.listas ));
-    }
-
-    // Carga las tareas desde local
-    // TODO guardar en base de datos
-    cargarStorage(){
-        /*
-            1 - comprueba que el almacenamiento local esta con datos.
-            2 - si contiene datos los recoge de un JSON.
-            3 - si no contiene solo tendriamos un arreglo vacio de listas.
-            4 - este metodo se llama una sola vez, al iniciar esta clase.
-        */
-        if( localStorage.getItem('data')){
-            this.listas = JSON.parse( localStorage.getItem('data'));
-        } else {
-            this.listas = [];
+    getList(index) {
+        let list = localStorage.getItem('pendientes' + index);
+        if (list !== 'undefined' && list !== null) {
+            this.list[index] = JSON.parse(list);
         }
+        if (index >= this.list.length) {
+            this.list.push([]);
+        }
+
+        return (this.list[index]);
     }
+
+    saveList( listIndex ) {
+        localStorage.setItem('pendientes' + listIndex, JSON.stringify(this.list[listIndex]));
+    }
+
+    getItem( itemIndex) {
+        return (this.list[itemIndex]);
+    }
+
+    setItem( item, itemIndex ) {
+        if (itemIndex == undefined) {
+            this.list[itemIndex].push(Object.assign({}, item));
+        } else {
+            this.list[itemIndex] = Object.assign({}, item);
+        }
+        this.saveList(itemIndex);
+    }
+
+    deleteItem( listIndex, itemIndex ) {
+        this.list[listIndex].splice(itemIndex, 1);
+        this.saveList(listIndex);
+    }
+
+    deleteList( listIndex ) {
+        this.list[listIndex].length = 0;
+        this.saveList(listIndex);
+    }
+
+    moveItem( listIndex, from, to ) {
+        let element = this.list[listIndex][from];
+        this.list[listIndex].splice(from, 1);
+        this.list[listIndex].splice(to, 0, element);
+        this.saveList(listIndex);
+    }
+
 }

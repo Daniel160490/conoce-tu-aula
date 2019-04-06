@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="perfil"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button><ion-icon color="danger" name="trash"></ion-icon></ion-button>
+      <ion-button (click)="addAlumn()"
+        ><ion-icon color="success" name="add"></ion-icon
+      ></ion-button>
+    </ion-buttons>
+    <ion-title>
+      Mis alumnos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-searchbar animated placeholder="Busca al alumno"></ion-searchbar>
+    <div *ngIf="data">
+      <ion-list *ngFor="let alum of alumService.alumnos; let i = index">
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="../../../assets/perfil-vacio.png" />
+          </ion-avatar>
+          <ion-label>
+            <h3><strong> NOMBRE: </strong> {{ alum.nombre }}</h3>
+            <h3><strong> PRIMER APELLIDO: </strong> {{ alum.apellidoUno }}</h3>
+            <h3><strong> SEGUNDO APELLIDO: </strong> {{ alum.apellidoDos }}</h3>
+            <h3><strong> CLASE: </strong> {{ alum.clase }}</h3>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <!-- Skeleton screen -->
+  <div *ngIf="!data">
+    <ion-list>
+      <ion-list-header>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+      </ion-list-header>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

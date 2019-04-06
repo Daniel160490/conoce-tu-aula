@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { PendientesPage } from '../pendientes/pendientes.page';
 import { TerminadasPage } from '../terminadas/terminadas.page';
-import { NavController } from '@ionic/angular';
-
-
+import { NavController, AlertController, IonTabs } from '@ionic/angular';
+import { TareasService } from 'src/app/services/tareas.service';
+import { AboutPage } from '../about/about.page';
 
 @Component({
   selector: 'app-tasks',
@@ -11,21 +11,14 @@ import { NavController } from '@ionic/angular';
 })
 export class TasksPage {
 
-  tab1Root = PendientesPage;
-  tab2Root = TerminadasPage;
   tasksPage: 'tasks';
-
-  constructor(public navCtrl: NavController) { 
+ 
+  constructor(public navCtrl: NavController,) { 
     console.log('TasksPage');
-    
   }
-  // private tareasService: TareasService, public navCtrl: NavController
-  // addTask(){
-  //   this.navCtrl.navigateForward('/agregar');
-  // }
 
-  // Abre la pantalla de tareas pendientes
-  openSlopes(){
+   // Abre la pantalla de tareas pendientes
+   openSlopes(){
     this.navCtrl.navigateForward('pendientes');
   }
 
@@ -33,5 +26,4 @@ export class TasksPage {
   openFinished(){
     this.navCtrl.navigateForward('terminadas');
   }
-
 }

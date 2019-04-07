@@ -33,8 +33,10 @@
           </ion-item>
 
           <ion-item-options side="end">
-            <ion-item-option (click)="removeAlumn(al)">
-              <ion-icon slot="icon-only" color="danger" name="trash"></ion-icon>
+            <ion-item-option>
+              <ion-button color="danger" icon-only (click)="removeAlumn(al)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
             </ion-item-option>
           </ion-item-options>
           

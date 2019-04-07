@@ -16,7 +16,7 @@ export class AlumnosPage implements OnInit {
   constructor(public alumService: AlumnosService, public navCtrl: NavController) { 
     
     console.log('AlumnosPage');
-    this.alumService.getAlumnos().subscribe(res => {
+    this.alumService.cargarAlumnos().subscribe(res => {
       this.alumnos = res;
     });
     

@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class AlumnosService {
 
     public alumnos: Observable<Alumnos[]>;
+    public alum;
     private itemsCollection: AngularFirestoreCollection<Alumnos>;
 
     constructor(private afs: AngularFirestore, public router: Router) {
@@ -50,18 +51,18 @@ export class AlumnosService {
         return this.itemsCollection.doc<Alumnos>(id).valueChanges();
     }
    
-    /*cargarAlumnos() {
+    cargarAlumnos() {
         this.itemsCollection = this.afs.collection<Alumnos>('alumnos');
 
         return this.itemsCollection.valueChanges().pipe(
             map((alumn: Alumnos[]) => {
                 console.log(alumn);
-                this.alumnos = [];
+                this.alum = [];
                 for (let al of alumn) {
-                    this.alumnos.unshift(al);
+                    this.alum.unshift(al);
                 }
-                return this.alumnos;
+                return this.alum;
             })
         );
-    }*/
+    }
 }

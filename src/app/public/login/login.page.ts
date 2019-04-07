@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { Router } from '@angular/router';
+import { NavController, NavParams } from '@ionic/angular';
+import { Usuario } from 'src/app/models/usuario.model';
 
 
 @Component({
@@ -12,12 +11,11 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
 
   loginPage = 'login';
- 
+  user = {} as Usuario;
   
   
-	constructor(
-    private navCtrl: NavController,
-    private  authService:  AuthenticationService, private  router:  Router
+  constructor(
+    public navCtrl: NavController
 	) {
 		
   }
@@ -31,10 +29,6 @@ export class LoginPage implements OnInit {
     this.navCtrl.navigateForward('home');
   }
 
-  // Metodo para llamar a la autentificacion
-  // ingresar( proveedor: string){
-  //   this.authService.login(proveedor);
-  // }
 }
 
 

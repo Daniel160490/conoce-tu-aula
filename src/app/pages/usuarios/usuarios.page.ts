@@ -12,7 +12,7 @@ export class UsuariosPage implements OnInit {
 
   usuariosPAge: 'usuariosPage';
   idSelected: any;
-  alumno = {
+  nuevoAlumno = {
     nombre: null,
     apellidoUno: null,
     apellidoDos: null,
@@ -27,8 +27,13 @@ export class UsuariosPage implements OnInit {
 
   // Metodo para guardar un alumno nuevo
   saveAlumn(){
-   
-  
+    this.alumService.addItems(this.nuevoAlumno);
+    console.log(this.nuevoAlumno);
+    if (this.nuevoAlumno) {
+      this.presentAlert();
+    }
+    this.navCtrl.navigateForward('alumnos');
+    
   }
 
   // Mensaje de alerta para usuario añadido correctamente.

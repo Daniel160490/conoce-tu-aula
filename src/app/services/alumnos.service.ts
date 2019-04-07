@@ -23,6 +23,16 @@ export class AlumnosService {
         
     }
 
+    getShoppingItems(){
+        return this.afs.collection('/alumnos/');
+      }
+    
+      addItems(name){
+         return this.afs.collection('/alumnos/').add(name);
+      }
+    
+     
+
     cargarAlumnos() {
         this.itemsCollection = this.afs.collection<Alumnos>('alumnos');
 

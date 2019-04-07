@@ -4,10 +4,7 @@
       <ion-back-button defaultHref="perfil"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button><ion-icon color="danger" name="trash"></ion-icon></ion-button>
-      <ion-button (click)="addAlumn()"
-        ><ion-icon color="success" name="add"></ion-icon
-      ></ion-button>
+      <ion-button (click)="addAlumn()" ><ion-icon color="success" name="add"></ion-icon></ion-button>
     </ion-buttons>
     <ion-title>
       Mis alumnos
@@ -18,20 +15,32 @@
 <ion-content padding>
   <div>
     <ion-searchbar animated placeholder="Busca al alumno"></ion-searchbar>
+    
     <div *ngIf="data">
-      <ion-list *ngFor="let alum of alumService.alumnos; let i = index">
-        <ion-item>
-          <ion-avatar slot="start">
-            <img src="../../../assets/perfil-vacio.png" />
-          </ion-avatar>
-          <ion-label>
-            <h3><strong> NOMBRE: </strong> {{ alum.nombre }}</h3>
-            <h3><strong> PRIMER APELLIDO: </strong> {{ alum.apellidoUno }}</h3>
-            <h3><strong> SEGUNDO APELLIDO: </strong> {{ alum.apellidoDos }}</h3>
-            <h3><strong> CLASE: </strong> {{ alum.clase }}</h3>
-          </ion-label>
-        </ion-item>
+
+      <ion-list>
+        <ion-item-sliding *ngFor="let al of alumnos">
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="../../../assets/perfil-vacio.png" />
+            </ion-avatar>
+            <ion-label>
+              <h3><strong> NOMBRE: </strong> {{ al.nombre }}</h3>
+              <h3><strong> PRIMER APELLIDO: </strong> {{ al.apellidoUno }}</h3>
+              <h3><strong> SEGUNDO APELLIDO: </strong> {{ al.apellidoDos }}</h3>
+              <h3><strong> CLASE: </strong> {{ al.clase }}</h3>
+            </ion-label>
+          </ion-item>
+
+          <ion-item-options side="end">
+            <ion-item-option (click)="removeAlumn(al)">
+              <ion-icon slot="icon-only" color="danger" name="trash"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+          
+        </ion-item-sliding>
       </ion-list>
+
     </div>
   </div>
 

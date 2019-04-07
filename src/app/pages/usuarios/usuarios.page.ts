@@ -36,6 +36,10 @@ export class UsuariosPage implements OnInit {
     
   }
 
+  deleteAlumn(alum) {
+    this.alumService.removeAlumn(alum.id);
+  }
+
   // Mensaje de alerta para usuario añadido correctamente.
   async presentAlert(){
     const alert = await this.alertController.create({

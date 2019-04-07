@@ -17,19 +17,19 @@ export class AlumnosService {
         
     }
 
-  
-
-    actualizarAlumno() {
-        
+    actualizarAlumno(alumno: Alumnos, id: string) {
+        return this.itemsCollection.doc(id).update(alumno);
+    }
+    
+    // Añadir un alumno
+    addItems(name){
+        return this.afs.collection('/alumnos/').add(name);
     }
 
-    getShoppingItems(){
-        return this.afs.collection('/alumnos/');
-      }
-    
-      addItems(name){
-         return this.afs.collection('/alumnos/').add(name);
-      }
+    // Eliminar un alumno
+    removeAlumn(id) {
+        return this.itemsCollection.doc(id).delete();
+    }
     
      
 

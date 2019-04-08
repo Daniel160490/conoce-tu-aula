@@ -10,6 +10,7 @@ import { Alumnos } from 'src/app/models/alumnos.model';
 })
 export class AlumnosPage implements OnInit {
 
+  usuariosUpdatePage: 'UsuariosUpdatePage';
   data: any;
   alumnos: Alumnos[];
 
@@ -41,6 +42,10 @@ export class AlumnosPage implements OnInit {
         'para2': 'adipiscing elit.'
       };
     }, 2000);
+  }
+
+  openUpdatePage(al){
+    this.navCtrl.navigateForward('usuarios-update', al.id);
   }
 
 }

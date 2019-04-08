@@ -10,7 +10,7 @@ import { AlumnosService } from 'src/app/services/alumnos.service';
 })
 export class UsuariosPage implements OnInit {
 
-  usuariosPAge: 'usuariosPage';
+  usuariosPage: 'usuariosPage';
   idSelected: any;
   nuevoAlumno = {
     nombre: null,
@@ -20,7 +20,9 @@ export class UsuariosPage implements OnInit {
     usuario: null,
     password: null
   }
-  constructor( public alumService: AlumnosService, public alertController: AlertController, public navCtrl: NavController, public formBuilder: FormBuilder) { }
+  constructor( public alumService: AlumnosService, public alertController: AlertController, public navCtrl: NavController, public formBuilder: FormBuilder) { 
+    console.log('UsuariosPage');
+  }
 
   ngOnInit() {
   }

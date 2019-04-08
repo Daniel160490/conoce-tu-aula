@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="perfil"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Edición de datos
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <div padding>
+      <li> Introduce los datos de tu alumno.</li>
+      <li> Recuerda los datos de Usuario y Contraseña. </li>
+    </div>
+  
+    <ion-list>
+  
+      <ion-item>
+        <!-- <ion-icon name="arrow-dropright"></ion-icon> -->
+        <ion-label> Nombre: </ion-label>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.nombre" placeholder="Nombre" type="text"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <!-- <ion-icon name="arrow-dropright"></ion-icon> -->
+        <ion-label> Primer apellido: </ion-label>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.apellidoUno" placeholder="Primer apellido" type="text"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <!-- <ion-icon name="arrow-dropright"></ion-icon> -->
+        <ion-label> Segundo apellido: </ion-label>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.apellidoDos" placeholder="Segundo apellido" type="text"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <!-- <ion-icon name="book"></ion-icon> -->
+        <ion-label> Clase: </ion-label>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.clase" placeholder="Clase a la que pertenece" type="text"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <!-- <ion-icon name="contact"></ion-icon> -->
+        <ion-label> Usuario: </ion-label>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.usuario" placeholder="Usuario" type="text"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <!-- <ion-icon name="key"></ion-icon> -->
+        <ion-label> Contraseña: </ion-label>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.password" placeholder="Contraseña" type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <!-- <ion-icon name="key"></ion-icon> -->
+        <ion-label> Confirmar contraseña: </ion-label>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.password" placeholder="Confirma la contraseña" type="password"></ion-input>
+      </ion-item>
+  
+    </ion-list>
+  
+    <div padding>
+      <ion-button expand="block" shape="round" type="submit" (click)="saveAlumn()"> Guardar alumno </ion-button>
+    </div>
+  
+  </ion-content>

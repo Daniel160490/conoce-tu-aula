@@ -45,7 +45,7 @@ export class AlumnosPage implements OnInit {
   }
 
   openUpdatePage(al){
-    this.navCtrl.navigateForward('usuarios-update', al.id);
+    this.navCtrl.navigateForward('usuarios-update', al);
   }
 
 }

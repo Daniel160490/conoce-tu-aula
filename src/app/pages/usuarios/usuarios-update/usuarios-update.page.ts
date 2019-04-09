@@ -10,7 +10,11 @@ import { Alumnos } from 'src/app/models/alumnos.model';
 })
 export class UsuariosUpdatePage implements OnInit {
 
-    @Input() usuarioRecibido: Alumnos;
+    alumnos: Alumnos[];
+    alumnoNombre: string;
+    alumnoApellidoUno: string;
+    alumnoApellidoDos: string;
+    alumnoClase: string;
     usuariosPAge: 'usuariosPage';
     idSelected: any;
     nuevoAlumno = {
@@ -28,7 +32,9 @@ export class UsuariosUpdatePage implements OnInit {
                 public formBuilder: FormBuilder) 
     {
         console.log('UsuariosUpdatePage');
-        console.log('Usuario recibido: ', this.usuarioRecibido);
+        this.alumService.cargarAlumnos().subscribe(res => {
+            this.alumnos = res;
+        });
     }
 
     ngOnInit(){
@@ -36,13 +42,10 @@ export class UsuariosUpdatePage implements OnInit {
     }
 
     // Metodo para guardar un alumno nuevo
-    saveAlumn(){
-        this.alumService.addItems(this.nuevoAlumno);
-        console.log(this.nuevoAlumno);
-        if (this.nuevoAlumno) {
-        this.presentAlert();
-        }
-        this.navCtrl.navigateForward('alumnos');
+    saveAlumn(alumno: Alumnos){
+       this.alumService.actualizarAlumno(alumno).then(() => {
+           this.navCtrl.navigateForward('alumnos');
+       })
         
     }
 

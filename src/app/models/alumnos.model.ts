@@ -1,4 +1,5 @@
 export interface Alumnos {
+    id: number;
     nombre: string;
     apellidoUno: string;
     apellidoDos: string;

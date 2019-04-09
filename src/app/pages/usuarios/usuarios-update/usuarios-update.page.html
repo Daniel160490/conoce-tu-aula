@@ -4,15 +4,19 @@
         <ion-back-button defaultHref="perfil"></ion-back-button>
       </ion-buttons>
       <ion-title>
-        Edición de datos
+        Edición de datos personales
       </ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content padding>
     <div padding>
-      <li> Introduce los datos de tu alumno.</li>
-      <li> Recuerda los datos de Usuario y Contraseña. </li>
+      <li> Cambia los campos que quieras.</li>
+      <li> Los datos de Usuario y Contraseña no se pueden editar. </li>
+    </div>
+
+    <div padding>
+      <p>Alumno a editar: {{ nuevoAlumno.nombre}} </p> 
     </div>
   
     <ion-list>
@@ -20,42 +24,33 @@
       <ion-item>
         <!-- <ion-icon name="arrow-dropright"></ion-icon> -->
         <ion-label> Nombre: </ion-label>
-        <ion-input text-right [(ngModel)]="nuevoAlumno.nombre" placeholder="Nombre" type="text"></ion-input>
+        <ion-input text-right  [(ngModel)]="nuevoAlumno.nombre" type="text">
+          {{ nuevoAlumno.nombre }}
+        </ion-input>
       </ion-item>
   
       <ion-item>
         <!-- <ion-icon name="arrow-dropright"></ion-icon> -->
         <ion-label> Primer apellido: </ion-label>
-        <ion-input text-right [(ngModel)]="nuevoAlumno.apellidoUno" placeholder="Primer apellido" type="text"></ion-input>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.apellidoUno" type="text">
+          {{ nuevoAlumno.apellidoUno }}
+        </ion-input>
       </ion-item>
   
       <ion-item>
         <!-- <ion-icon name="arrow-dropright"></ion-icon> -->
         <ion-label> Segundo apellido: </ion-label>
-        <ion-input text-right [(ngModel)]="nuevoAlumno.apellidoDos" placeholder="Segundo apellido" type="text"></ion-input>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.apellidoDos" type="text">
+          {{ nuevoAlumno.apellidoDos }}
+        </ion-input>
       </ion-item>
   
       <ion-item>
         <!-- <ion-icon name="book"></ion-icon> -->
         <ion-label> Clase: </ion-label>
-        <ion-input text-right [(ngModel)]="nuevoAlumno.clase" placeholder="Clase a la que pertenece" type="text"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <!-- <ion-icon name="contact"></ion-icon> -->
-        <ion-label> Usuario: </ion-label>
-        <ion-input text-right [(ngModel)]="nuevoAlumno.usuario" placeholder="Usuario" type="text"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <!-- <ion-icon name="key"></ion-icon> -->
-        <ion-label> Contraseña: </ion-label>
-        <ion-input text-right [(ngModel)]="nuevoAlumno.password" placeholder="Contraseña" type="password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <!-- <ion-icon name="key"></ion-icon> -->
-        <ion-label> Confirmar contraseña: </ion-label>
-        <ion-input text-right [(ngModel)]="nuevoAlumno.password" placeholder="Confirma la contraseña" type="password"></ion-input>
+        <ion-input text-right [(ngModel)]="nuevoAlumno.clase" type="text">
+          {{ nuevoAlumno.clase }}
+        </ion-input>
       </ion-item>
   
     </ion-list>

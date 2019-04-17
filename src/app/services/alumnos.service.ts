@@ -4,7 +4,6 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AngularFireDatabase } from 'angularfire2/database';
 
 
 @Injectable({
@@ -14,10 +13,9 @@ export class AlumnosService {
 
     public alumnos: Observable<Alumnos[]>;
     public alum;
-    private listaAlumnos = this.db.list<Alumnos>('alumnos');
     private itemsCollection: AngularFirestoreCollection<Alumnos>;
 
-    constructor(public db: AngularFireDatabase,private afs: AngularFirestore, public router: Router) {
+    constructor(private afs: AngularFirestore, public router: Router) {
         this.itemsCollection = afs.collection<Alumnos>('alumnos');
 
         this.alumnos = this.itemsCollection.snapshotChanges().pipe(
@@ -31,13 +29,10 @@ export class AlumnosService {
         );
     }
 
-    // actualizarAlumno(alumno, id: string) {
-    //     return this.itemsCollection.doc(id).update(alumno);
-    // }
-    actualizarAlumno(alumno: Alumnos){
-        return this.listaAlumnos.update(alumno.nombre, alumno);
+    actualizarAlumno(alumno, id: string) {
+        return this.itemsCollection.doc(id).update(alumno);
     }
-    
+  
     // Añadir un alumno
     addItems(name){
         return this.afs.collection('/alumnos/').add(name);

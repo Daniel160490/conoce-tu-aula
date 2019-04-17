@@ -4,6 +4,7 @@ import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-help1',
   templateUrl: './help1.page.html',
+  styleUrls: ['./help1.page.scss']
 })
 export class HelpPage1 {
 

@@ -45,22 +45,18 @@
 
   <!-- Mensajes de aprovacion -->
   <ion-card *ngIf="desaprobacion" text-center>
-    <ion-card-header>
-      <ion-img style="height: 20%; width: 20%;" src="/assets/sad.png"></ion-img>
-    </ion-card-header>
-    <ion-card-content>
-      <p> UPS.... Sentimos que no haya sido de ayuda para ti. </p>
-      <p> Trataremos de mejorar. </p>
-    </ion-card-content>
+    <div>
+      <ion-img class="center" src="/assets/sad.png"></ion-img>
+      <p>UPS.... Sentimos que no haya sido de ayuda para ti.</p>
+      <p>Trataremos de mejorar.</p>
+    </div>
   </ion-card>
 
   <ion-card *ngIf="aprobacion" text-center>
-    <ion-card-header>
-      <ion-img style="height: 20%; width: 20%;" src="/assets/happy.png"></ion-img>
-    </ion-card-header>
-    <ion-card-content>
-      <p> Gracias por tu colaboración. </p>
-    </ion-card-content>
+    <div>
+      <ion-img class="center" src="/assets/happy.png"></ion-img>
+      <p>Gracias por tu colaboración.</p>
+    </div>
   </ion-card>
   <!-- Mensajes de aprovacion -->
 

@@ -14,13 +14,17 @@
 
 <ion-content padding>
   <div>
-    <h1>Información</h1>
-    <ion-fab vertical="top" horizontal="end" slot="fixed">
-      <ion-img
-        class="img"
-        src="/assets/profIcon.svg"
-      ></ion-img>
-    </ion-fab>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6"> 
+          <h1>Información</h1> 
+        </ion-col>
+        <ion-col size="6"> 
+          <ion-img class="img" src="/assets/profIcon.svg"></ion-img> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
     <div *ngFor="let teacher of _pfService.profesor; let i = index">
       <p>
         <strong> Tu profesor: </strong> {{ teacher.nombre }},
@@ -67,9 +71,6 @@
           </ion-datetime>
         </ion-item>
         <ion-item>
-          <p text-center>Fecha seleccionada: {{ fecha.substr(0, 10) }}</p>
-        </ion-item>
-        <ion-item>
           <ion-label> Motivo de la reunión </ion-label>
           <ion-select
             [interfaceOptions]="customPopoverOptions"
@@ -80,6 +81,9 @@
             </ion-select-option>
           </ion-select>
         </ion-item>
+        <ion-item>
+          <p text-center> Fecha seleccionada: {{ fecha.substr(0, 10) }} </p>
+        </ion-item>
       </ion-list>
       <ion-button expand="block" shape="round" *ngIf="!confirm" (click)="validateMessage()">
         Solicitar reunión
@@ -89,7 +93,17 @@
 
   <ion-item-divider></ion-item-divider>
   <div>
-    <h1> Mis alumnos </h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <h1> Mis alumnos </h1>
+        </ion-col>
+        <ion-col size="6">
+          <ion-img class="img-alum" src="/assets/profIcon.svg"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
     <p> Pulsa aquí para poder gestionar tus alumnos.</p>
     <ion-button expand="block" shape="round" (click)="loadAlumnos()">
       Gestión de alumnos

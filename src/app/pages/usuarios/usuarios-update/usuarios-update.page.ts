@@ -43,7 +43,7 @@ export class UsuariosUpdatePage implements OnInit {
 
     // Metodo para guardar un alumno nuevo
     saveAlumn(alumno: Alumnos){
-       this.alumService.actualizarAlumno(alumno).then(() => {
+       this.alumService.actualizarAlumno(alumno, null).then(() => {
            this.navCtrl.navigateForward('alumnos');
        })
         

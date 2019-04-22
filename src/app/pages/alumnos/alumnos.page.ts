@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlumnosService } from 'src/app/services/alumnos.service';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular';
 import { Alumnos } from 'src/app/models/alumnos.model';
 
 @Component({
@@ -14,7 +14,7 @@ export class AlumnosPage implements OnInit {
   data: any;
   alumnos: Alumnos[];
 
-  constructor(public alumService: AlumnosService, public navCtrl: NavController) { 
+  constructor(public alumService: AlumnosService, public navCtrl: NavController, public alertCtrl : AlertController) { 
     
     console.log('AlumnosPage');
     this.alumService.cargarAlumnos().subscribe(res => {
@@ -30,8 +30,32 @@ export class AlumnosPage implements OnInit {
     this.navCtrl.navigateForward('usuarios');
   }
 
-  removeAlumn(al) {
-    this.alumService.removeAlumn(al.id);
+  // removeAlumn(al) {
+  //   this.alumService.removeAlumn(al.id);
+  // }
+
+  async borrar(al){
+    let alert = await this.alertCtrl.create({
+      message: '¿Seguro que quieres borrar este alumno?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            // Se responde que no, no se hace nada.
+          }
+        },
+        {
+          text: 'Si',
+          handler: () => {
+            //Aqui se borra el alumno
+            this.alumService.removeAlumn(al.id);
+          }
+        }
+      ]
+    });
+
+    alert.present();
   }
 
   ionViewWillEnter() {

@@ -3,6 +3,8 @@
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
       </ion-buttons>
+      <ion-buttons slot="end">
+      </ion-buttons>
       <ion-title>
           Mis tareas
       </ion-title>
@@ -11,20 +13,34 @@
       
 <ion-content padding>
 
+    <!--Contenido de las tareas-->
     <div>
-        <h2 text-center> ¿Qué tenemos aquí? </h2>
-        <p>En este apartado encontrarás tus tareas, tanto las realizadas, como las que están aún pendientes por hacer.</p>
-    </div>
-    
-    <ion-list>
-        <ion-item (click)="openSlopes()">
-            <ion-label> Tareas pendientes </ion-label>
-        </ion-item>
-        <ion-item (click)="openFinished()">
-            <ion-label> Tareas completadas </ion-label>
-        </ion-item>
+        <div>
+            <h2 text-center> ¿Qué tenemos aquí? </h2>
+            <p>En este apartado encontrarás tus tareas, tanto las realizadas, como las que están aún pendientes por hacer.</p>
+        </div>
         
-    </ion-list>
+        <ion-list>
+            <ion-item (click)="openSlopes()">
+                <ion-label> Tareas pendientes </ion-label>
+            </ion-item>
+            <ion-item (click)="openFinished()">
+                <ion-label> Tareas completadas </ion-label>
+            </ion-item>
+            
+        </ion-list>
+    </div>
+
+   
+
+    <!--Contenido de los apuntes-->
+    <div style="padding-top: 90%;">
+        <div>
+            <h2 text-center> Mis apuntes </h2>
+            <p> Encuentra aquí los apuntes de clase.</p>
+        </div>
+        <ion-button expand="block" shape="round"> Abrir apuntes </ion-button>
+    </div>
 
 </ion-content>
 

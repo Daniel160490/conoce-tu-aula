@@ -18,6 +18,14 @@
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
+      <ion-item>
+          <div class="app-version" >
+            <div class="name" >
+              Última Conexión
+            </div>
+            <span class="text-os-bold"> {{ lastConnectionDate | date }} </span>
+          </div>
+        </ion-item>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
   </ion-split-pane>

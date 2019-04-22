@@ -26,4 +26,8 @@ export class TasksPage {
   openFinished(){
     this.navCtrl.navigateForward('terminadas');
   }
+
+  abrirApuntes(){
+    this.navCtrl.navigateForward('apuntes');
+  }
 }

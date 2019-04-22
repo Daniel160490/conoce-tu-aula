@@ -3,8 +3,6 @@
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-buttons slot="end">
-      </ion-buttons>
       <ion-title>
           Mis tareas
       </ion-title>
@@ -39,7 +37,7 @@
             <h2 text-center> Mis apuntes </h2>
             <p> Encuentra aquí los apuntes de clase.</p>
         </div>
-        <ion-button expand="block" shape="round"> Abrir apuntes </ion-button>
+        <ion-button expand="block" shape="round" (click)="abrirApuntes()"> Abrir apuntes </ion-button>
     </div>
 
 </ion-content>

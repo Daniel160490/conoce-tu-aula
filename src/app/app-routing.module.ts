@@ -30,7 +30,8 @@ const routes: Routes = [
   { path: 'help3', loadChildren: './pages/help/help3/help3.module#HelpPage3Module' },
   { path: 'usuarios', loadChildren: './pages/usuarios/usuarios.module#UsuariosPageModule' },
   { path: 'usuarios-update', loadChildren: './pages/usuarios/usuarios-update/usuarios-update.module#UsuariosUpdatePageModule'},
-  { path: 'alumnos', loadChildren: './pages/alumnos/alumnos.module#AlumnosPageModule' },
+  { path: 'alumnos', loadChildren: './pages/alumnos/alumnos.module#AlumnosPageModule' },  { path: 'apuntes', loadChildren: './pages/apuntes/apuntes.module#ApuntesPageModule' },
+
 
 ];
 

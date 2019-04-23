@@ -6,8 +6,8 @@
   </ion-toolbar>
 </ion-header> -->
 
-<ion-content>
-  <div class="ionContent">
+<ion-content padding>
+  <div justify-content-center>
     <img src="assets/icon/favicon.png" class="imgRedonda" />
     <!-- <img src="assets/fondo.png" class="background" /> -->
     <!-- <ion-title style="text-align:center; z-index: +1; "> CONOCE TU AULA </ion-title> -->
@@ -22,26 +22,14 @@
     <ion-grid>
       <ion-row>
         <ion-col center text-center>
-          <ion-button
-            ion-button
-            full
-            color="primary"
-            (click)="login()"
-            shape="round"
-          >
+          <ion-button expand="full" color="primary" (click)="login()" shape="round">
             Login
           </ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col center text-center>
-          <ion-button
-            ion-button
-            full
-            color="success"
-            (click)="signup()"
-            shape="round"
-          >
+          <ion-button expand="full" color="success" (click)="signup()" shape="round">
             Registrar
           </ion-button>
         </ion-col>

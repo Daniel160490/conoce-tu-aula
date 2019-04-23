@@ -16,7 +16,20 @@
     <p>
       <li> Lugar para encontrar los PDF's de las clases. </li>
     </p>
-    <ion-button expand="full" (click)="openPDF()" shape="round"> Abrir PDF </ion-button>
+
+    <!--Listado de apuntes-->
+    <div>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-label> Lista de apuntes... </ion-label>
+          <ion-button slot="end" size="small" shape="round" color="success"> 
+            Abrir PDF 
+            <ion-icon slot="start" name="document"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </div>
+
   </div>
 
 </ion-content>

@@ -7,7 +7,8 @@ import { AboutPage } from '../about/about.page';
 
 @Component({
   selector: 'app-tasks',
-  templateUrl: './tasks.page.html'
+  templateUrl: './tasks.page.html',
+  styleUrls: ['./tasks.page.scss']
 })
 export class TasksPage {
 

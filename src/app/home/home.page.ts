@@ -30,6 +30,11 @@ export class HomePage {
     this.navCtrl.navigateForward('about');
   }
 
+  // Acceso directo a los apuntes
+  accessApuntes(){
+    this.navCtrl.navigateForward('apuntes');
+  }
+
   // Botón para cierre de sesión.
   // Redirecciona a la página principal de la aplicación.
   async closeSession(){

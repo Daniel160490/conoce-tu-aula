@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,25 +12,53 @@ export class HomePage {
   titulo = 'Conoce tu aula';
   
   
-  constructor(public navCtrl: NavController){
+  constructor(public navCtrl: NavController, public alertCtrl : AlertController){
     console.log('HomePage');
     
   }
 
   // Acceso a la pantalla de login
-  accessLogin(){
-    this.navCtrl.navigateForward('access');
-  }
+  // accessLogin(){
+  //   this.navCtrl.navigateForward('access');
+  // }
 
+  // Acceso directo al calendario de la aplicación
   accessCalendar(){
     this.navCtrl.navigateForward('calendar');
   }
 
+  // Acceso directo a las tareas
   accessTasks(){
     this.navCtrl.navigateForward('tasks');
   }
 
+  // Acceso directo a la información básica de la aplicación
   accessAbout(){
     this.navCtrl.navigateForward('about');
+  }
+
+  // Botón para cierre de sesión.
+  // Redirecciona a la página principal de la aplicación.
+  async closeSession(){
+    let alert = await this.alertCtrl.create({
+      message: 'Estás a punto de cerrar sesión, ¿Estás seguro?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            // Al marcar el no, no se hace nada.
+          }
+        },
+        {
+          text: 'Aceptar',
+          handler: () =>{
+            // Envía a la página de acceso principal de la aplicación
+            this.navCtrl.navigateForward('access');
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 }

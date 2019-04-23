@@ -42,7 +42,10 @@
   <ion-footer class="foo">
     <ion-toolbar>
       <div padding>
-        <ion-button (click)="closeApp()" size="large" type="submit" expand="block" shape="round"> Cerrar sesión </ion-button>
+        <ion-button slot="end" (click)="closeApp()" type="submit" expand="block" shape="round"> 
+          Cerrar sesión 
+          <ion-icon slot="start" name="power"></ion-icon>
+        </ion-button>
       </div>
     </ion-toolbar>
   </ion-footer>

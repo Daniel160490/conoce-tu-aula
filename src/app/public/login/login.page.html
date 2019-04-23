@@ -1,12 +1,5 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>
-     
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
-<ion-content padding >
+<ion-content>
+  <!--
   <form #form="ngForm" (ngSubmit)="login()" style="padding-top: 50%;">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
@@ -42,4 +35,24 @@
       </ion-row>
     </ion-grid>
   </form>
+-->
+
+  <body>
+    <form class="box" #form="ngForm" (ngSubmit)="login()" method="post">
+      <h1> Acceso a la aplicación</h1>
+      <input type="email" name="email" placeholder="Usuario" ngModel required/>
+      <input type="password" name="password" placeholder="Contraseña" ngModel required/>
+      <input ion-button type="submit" name="" value="Entrar" [disabled]="form.invalid"/>
+
+      <ion-row>
+          <div text-center>
+            Si no tienes cuenta, por favor <a style="color:white;" routerLink='/register'>
+              registrate</a> primero!
+          </div>
+        </ion-row>
+
+    </form>
+  </body>
+
+
 </ion-content>

@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Conoce tu aula
+      {{ titulo }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -20,8 +20,7 @@
   <ion-card class="welcome-card">
     <ion-img src="/assets/fondo.png"></ion-img>
     <ion-card-header>
-      <ion-card-title>Bienvenido a </ion-card-title>
-      <ion-card-title> {{ titulo }} </ion-card-title>
+      <ion-card-title text-center>Bienvenido a <strong> {{ titulo }}</strong> </ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <p>

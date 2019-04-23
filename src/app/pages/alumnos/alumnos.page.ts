@@ -65,7 +65,7 @@ export class AlumnosPage implements OnInit {
         'para1': 'Lorem ipsum dolor sit amet, consectetur',
         'para2': 'adipiscing elit.'
       };
-    }, 2000);
+    }, 1000);
   }
 
   openUpdatePage(al){

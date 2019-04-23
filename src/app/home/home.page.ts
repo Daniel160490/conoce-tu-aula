@@ -11,16 +11,9 @@ export class HomePage {
   home = 'home';
   titulo = 'Conoce tu aula';
   
-  
   constructor(public navCtrl: NavController, public alertCtrl : AlertController){
     console.log('HomePage');
-    
   }
-
-  // Acceso a la pantalla de login
-  // accessLogin(){
-  //   this.navCtrl.navigateForward('access');
-  // }
 
   // Acceso directo al calendario de la aplicación
   accessCalendar(){

@@ -72,4 +72,7 @@ export class AlumnosPage implements OnInit {
     this.navCtrl.navigateForward('usuarios-update', al);
   }
 
+
+  // DOCUMENTACION
+  // https://www.techiediaries.com/ionic-2-navigation/
 }

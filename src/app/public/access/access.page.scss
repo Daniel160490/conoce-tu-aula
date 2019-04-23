@@ -48,10 +48,8 @@ ion-card{
     filter: blur(40px);
 }
 
-.ionContent {
-    // background-image: url("assets/fondo.png");
-    margin-top: 50%;
-    background-color: darkcyan;
-    background-image: linear-gradient(darkcyan, cyan, white);
-    // border-radius: 5%;
+:host{
+    ion-content {
+        --background: url('../../../assets/background.jpg') no-repeat 100% 100%;
+    }
 }

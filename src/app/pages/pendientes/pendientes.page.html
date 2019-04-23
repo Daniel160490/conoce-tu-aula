@@ -23,7 +23,7 @@
 
   <ion-list #myList lines="full">
         <ion-reorder-group [disabled]="!reorder">
-          <ion-item-sliding *ngFor="let item of tabs[i].list; let j=index">
+          <ion-item-sliding *ngFor="let item of tabs.list; let j=index">
             <ion-item [routerLink]="['/AddEditItem', { tab:i, item:j }]">
               <ion-label text-wrap>
                 <h2>{{item.task}}</h2>

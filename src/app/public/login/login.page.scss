@@ -17,3 +17,9 @@ ion-item.item {
     font-size: 1.2em;
   }
 }
+
+:host{
+  ion-content {
+      --background: url('../../../assets/background.jpg') no-repeat 100% 100%;
+  }
+}
